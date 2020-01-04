@@ -24,7 +24,6 @@ It's nice and it helps some of the time. But sometimes the word I'm looking for 
 
 ```json
 [
-  // ...
   {
     "key": "cmd+i cmd+k",
     "command": "extension.changeCase.kebab"
@@ -50,11 +49,10 @@ It's nice and it helps some of the time. But sometimes the word I'm looking for 
 
 [Expand Region](https://marketplace.visualstudio.com/items?itemName=letrieu.expand-region) - This one lets you bind a keyboard shortcut for expanding and contracting the selected region, having a GIF explain it makes so much sense, so check out the one in the link.
 
-I found the following keybinding best suiting for it
+I found the following keybinding best suiting for it:
 
 ```json
 [
-  // ...
   {
     "key": "alt+shift+up",
     "command": "expand_region",
@@ -68,7 +66,7 @@ I found the following keybinding best suiting for it
 ]
 ```
 
-[Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost) - Displays the size of an imported 3rd party module, next to the import statement. Doesn't _always_ work for me, but when it does it's really neat. Save the hassle of going to [Bundle Phobia](https://bundlephobia.com/).
+[Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost) - Displays the size of an imported 3rd party module, next to the import statement. Doesn't _always_ work for me, but when it does it's really neat. Saves the hassle of going to [Bundle Phobia](https://bundlephobia.com/).
 
 [Incrementor](https://marketplace.visualstudio.com/items?itemName=nmsmith89.incrementor) - Lets you bind a keyboard shortcut to increment/decrement the value within your current selection(s). I used to havily depend on this one but haven't much since I moved to VSCode. Maybe you'll find it useful though.
 
@@ -86,7 +84,6 @@ I have the following keybindings set up for it:
 
 ```json
 [
-  // ...
   {
     "key": "ctrl+shift+right",
     "command": "selectPartOfWord.selectRight"
@@ -122,13 +119,13 @@ I have the following keybindings set up for it:
 
 [Copy File Name](https://marketplace.visualstudio.com/items?itemName=nemesv.copy-file-name) - Useful in projects where the filenames are the names of the classes/functions they contain. With it I can Cmd+Shift+P > Type "cfn" > Enter, then paste it somewhere I need it, and using the kybindings for Change Case, change its case to whatever.
 
-[File Utils](https://marketplace.visualstudio.com/items?itemName=sleistner.vscode-fileutils) - This extension adds some use file manipulation commands to the Command Palette.
+[File Utils](https://marketplace.visualstudio.com/items?itemName=sleistner.vscode-fileutils) - This extension adds some useful file manipulation commands to the Command Palette.
 
 ## Etc
 
 [Copy JSON Path](https://marketplace.visualstudio.com/items?itemName=nidu.copy-json-path) - Very useful in all sorts of use cases. One that pops to my mind immediately when thinking about this extension is where you need to specifiy the getter string (or JSON path) for an i18n string that resides in some lengthy JSON.
 
-[Quit Control for VSCode](https://marketplace.visualstudio.com/items?itemName=artdiniz.quitcontrol-vscode) - Quit control will pop a message making sure you really want to leave once you hit Cmd+Q / Cmd+Shift+W. This one saved me so many times.
+[Quit Control for VSCode](https://marketplace.visualstudio.com/items?itemName=artdiniz.quitcontrol-vscode) - Quit control will pop up a message box making sure you really want to leave once you hit Cmd+Q / Cmd+Shift+W. This one saved me so many times.
 
 ## More Shortcuts
 
@@ -138,7 +135,6 @@ Here are some other useful keyboard shortcuts I set up along the years:
 
 ```json
 [
-  // ...
   // Collapses all folders within the Explorer Pane
   {
     "key": "cmd+k cmd+c",
