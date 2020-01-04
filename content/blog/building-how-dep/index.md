@@ -6,7 +6,7 @@ description: 'Going through some interesting concepts I first encountered when b
 
 [**How-dep**](https://github.com/dutzi/how-dep) is a CLI tool that analyzes your TypeScript<sup>1</sup> project, counting how many imports it encounters per each module your project depends on.
 
-How-dep generates both a CLI report and a living, breathing HTML report. [Here's](/static/how-dep-example.html) an example of one.
+How-dep generates both a CLI report and a living, breathing HTML report. [Here's](https://dutzi.github.io/how-dep/example-report) an example of one.
 
 To run how-dep, first install it (`yarn global add how-dep`), then run it in your project's root folder (`how-dep`).
 
@@ -199,7 +199,7 @@ For the favicon to work, I decided to base64 encode it and bake it into a React 
 
 <sup>1</sup> How-dep supports JavaScript as well, just provide it with a basic tsconfig.json file
 
-<div class="dependencies test2">
+<div class="dependencies">
 
 **Dependencies:**
 <span class="dep">[@phenomnomnominal/tsquery](https://npmjs.com/package/@phenomnomnominal/tsquery)</span>
