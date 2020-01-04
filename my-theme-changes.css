@@ -72,11 +72,12 @@ article {
 }
 
 .tags .tag {
-  color: white;
+  color: #888;
+  text-shadow: 0px 1px #ffffff5e;
   padding: 3px 6px;
   border-radius: 4px;
   margin-right: 6px;
-  background: #a2a2a2;
+  background: #dadada;
   font-size: 0.85em;
   font-weight: 100;
 }
