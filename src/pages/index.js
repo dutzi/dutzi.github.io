@@ -17,11 +17,8 @@ class BlogIndex extends React.Component {
         <SEO title="All posts" />
         <Bio greeting />
         {posts.map(({ node }) => {
-          console.log(node)
           const title = node.frontmatter.title || node.fields.slug
           const tags = node.frontmatter.tags
-            ? node.frontmatter.tags.split(' ')
-            : null
           return (
             <article key={node.fields.slug}>
               <header>

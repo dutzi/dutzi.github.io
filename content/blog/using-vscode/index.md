@@ -2,7 +2,7 @@
 title: Things I've Learnt Using VSCode
 date: '2020-01-04T06:26:28.307Z'
 description: 'Listing some extensions I found useful and some of my keyboard shortcuts'
-tags: vscode extensions keybindings
+tags: ['vscode', 'extensions', 'keybindings']
 ---
 
 [**VSCode**](https://code.visualstudio.com/) is one hell of an editor. About two years after it was initially announced I started using it regularly, and, as much as I cherish Sublime Text, I haven't looked back since.
@@ -19,7 +19,7 @@ A lot of times I would google the not-so-good name I came up with just to see wh
 
 It's nice and it helps some of the time. But sometimes the word I'm looking for isn't an equivalent of some word. Sometimes I'll think of a word, and I'll want to know what is it a type of. For example, the word "example" is a type of "representation". For that, I'll use [Words API](https://www.wordsapi.com/). No VSCode extension for it yet.
 
-## Editing Utils
+## Editor Extensions
 
 [Change Case](https://marketplace.visualstudio.com/items?itemName=wmaurer.change-case) - It has been in my toolbelt since I've been using Sublime Text. I am using it so much that I've set up the following keybindings for it:
 

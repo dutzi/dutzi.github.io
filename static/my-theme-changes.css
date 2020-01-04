@@ -95,3 +95,7 @@ article {
 .sidenote > *:last-child {
   margin-bottom: 0px;
 }
+
+header h3 {
+  color: #aaa;
+}
