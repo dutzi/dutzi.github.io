@@ -8,7 +8,6 @@
 <h2>Editing Utils</h2>
 <p><a href="https://marketplace.visualstudio.com/items?itemName=wmaurer.change-case">Change Case</a> - It has been in my toolbelt since I’ve been using Sublime Text. I am using it so much that I’ve set up the following keybindings for it:</p>
 <div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">[</span>
-  <span class="token comment">// ...</span>
   <span class="token punctuation">{</span>
     <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"cmd+i cmd+k"</span><span class="token punctuation">,</span>
     <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"extension.changeCase.kebab"</span>
@@ -31,9 +30,8 @@
   <span class="token punctuation">}</span>
 <span class="token punctuation">]</span></code></pre></div>
 <p><a href="https://marketplace.visualstudio.com/items?itemName=letrieu.expand-region">Expand Region</a> - This one lets you bind a keyboard shortcut for expanding and contracting the selected region, having a GIF explain it makes so much sense, so check out the one in the link.</p>
-<p>I found the following keybinding best suiting for it</p>
+<p>I found the following keybinding best suiting for it:</p>
 <div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">[</span>
-  <span class="token comment">// ...</span>
   <span class="token punctuation">{</span>
     <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"alt+shift+up"</span><span class="token punctuation">,</span>
     <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"expand_region"</span><span class="token punctuation">,</span>
@@ -45,7 +43,7 @@
     <span class="token property">"when"</span><span class="token operator">:</span> <span class="token string">"editorTextFocus &amp;&amp; editorHasSelection"</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">]</span></code></pre></div>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost">Import Cost</a> - Displays the size of an imported 3rd party module, next to the import statement. Doesn’t <em>always</em> work for me, but when it does it’s really neat. Save the hassle of going to <a href="https://bundlephobia.com/">Bundle Phobia</a>.</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost">Import Cost</a> - Displays the size of an imported 3rd party module, next to the import statement. Doesn’t <em>always</em> work for me, but when it does it’s really neat. Saves the hassle of going to <a href="https://bundlephobia.com/">Bundle Phobia</a>.</p>
 <p><a href="https://marketplace.visualstudio.com/items?itemName=nmsmith89.incrementor">Incrementor</a> - Lets you bind a keyboard shortcut to increment/decrement the value within your current selection(s). I used to havily depend on this one but haven’t much since I moved to VSCode. Maybe you’ll find it useful though.</p>
 <p><a href="https://marketplace.visualstudio.com/items?itemName=Asuka.insertnumbers">Insert Numbers</a> - Insert a range of numbers to all cursor positions.</p>
 <p><a href="https://marketplace.visualstudio.com/items?itemName=Cardinal90.multi-cursor-case-preserve">Multiple Cursor Case Preserve</a> - Got a curser over a bunch of words cased differently? Once you start typing, this extensions will preserve the casing under each selection. I use this one a lot!</p>
@@ -54,7 +52,6 @@
 <p><a href="https://marketplace.visualstudio.com/items?itemName=mlewand.select-part-of-word">Select Part Of Word</a> - This one lets you traverse camel-cased words easily.</p>
 <p>I have the following keybindings set up for it:</p>
 <div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">[</span>
-  <span class="token comment">// ...</span>
   <span class="token punctuation">{</span>
     <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"ctrl+shift+right"</span><span class="token punctuation">,</span>
     <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"selectPartOfWord.selectRight"</span>
@@ -84,15 +81,14 @@
 <p><a href="https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff">Partial Diff</a> - VSCode has a nice UI for diffing files. This extension lets you enjoy that UI when diffing between a wider variety of input sources (files, clipboard and current selection), so you can diff between the contents of your clipboard and your current selection, for example.</p>
 <h2>Files</h2>
 <p><a href="https://marketplace.visualstudio.com/items?itemName=nemesv.copy-file-name">Copy File Name</a> - Useful in projects where the filenames are the names of the classes/functions they contain. With it I can Cmd+Shift+P > Type “cfn” > Enter, then paste it somewhere I need it, and using the kybindings for Change Case, change its case to whatever.</p>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=sleistner.vscode-fileutils">File Utils</a> - This extension adds some use file manipulation commands to the Command Palette.</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=sleistner.vscode-fileutils">File Utils</a> - This extension adds some useful file manipulation commands to the Command Palette.</p>
 <h2>Etc</h2>
 <p><a href="https://marketplace.visualstudio.com/items?itemName=nidu.copy-json-path">Copy JSON Path</a> - Very useful in all sorts of use cases. One that pops to my mind immediately when thinking about this extension is where you need to specifiy the getter string (or JSON path) for an i18n string that resides in some lengthy JSON.</p>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=artdiniz.quitcontrol-vscode">Quit Control for VSCode</a> - Quit control will pop a message making sure you really want to leave once you hit Cmd+Q / Cmd+Shift+W. This one saved me so many times.</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=artdiniz.quitcontrol-vscode">Quit Control for VSCode</a> - Quit control will pop up a message box making sure you really want to leave once you hit Cmd+Q / Cmd+Shift+W. This one saved me so many times.</p>
 <h2>More Shortcuts</h2>
 <p>Coming from Sublime Text, I’m pretty sure the first extension I added was <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings">Sublime Text Keymap and Settings Importer</a> (check <a href="https://github.com/Microsoft/vscode-sublime-keybindings#why-dont-all-sublime-text-commands-work">this</a> out for even more extensions for people coming from ST).</p>
 <p>Here are some other useful keyboard shortcuts I set up along the years:</p>
 <div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">[</span>
-  <span class="token comment">// ...</span>
   <span class="token comment">// Collapses all folders within the Explorer Pane</span>
   <span class="token punctuation">{</span>
     <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"cmd+k cmd+c"</span><span class="token punctuation">,</span>
