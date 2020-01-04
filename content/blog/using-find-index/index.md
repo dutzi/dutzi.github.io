@@ -7,17 +7,17 @@ tags: array findIndex
 
 **Array.prototype.findIndex**, according to [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex) is:
 
-> A method that returns the **index** of the first element in the array **that satisfies the provided testing function**. Otherwise, it returns -1, indicating that no element passed the test.s
+> A method that returns the **index** of the first element in the array **that satisfies the provided testing function**. Otherwise, it returns -1, indicating that no element passed the test.
 
 ## Example Usage
 
-Say we have the follow array:
+Say we have the following array:
 
 ```js
 const arr = [1, 2, 3, 4, 5]
 ```
 
-The following code will find the first element whose value is 3:
+The following code will find the first element whose value is 3 and return its index:
 
 ```js
 arr.findIndex(value => value === 3) // 2
@@ -71,7 +71,7 @@ But that just makes no sense.
 However, by calling `findIndex` and passing it a callback that looks for a specific name within the object passed to it, we could accomplish this easily:
 
 ```js
-students.findIndex(student => student.name === 'Dave'))
+students.findIndex(student => student.name === 'Dave')
 ```
 
 ## Array.findIndex vs Array.find
