@@ -1,4 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Things I've Learnt]]></title><description><![CDATA[Things I learnt building stuff.]]></description><link>https://dutzi.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 04 Jan 2020 07:48:14 GMT</lastBuildDate><item><title><![CDATA[Things I've Learnt Using VSCode]]></title><description><![CDATA[VSCode is one hell of an editor. About two years after it was initially announced I started using it regularly, and, as much as I cherish…]]></description><link>https://dutzi.github.io/using-vscode/</link><guid isPermaLink="false">https://dutzi.github.io/using-vscode/</guid><pubDate>Sat, 04 Jan 2020 06:26:28 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;&lt;strong&gt;VSCode&lt;/strong&gt;&lt;/a&gt; is one hell of an editor. About two years after it was initially announced I started using it regularly, and, as much as I cherish Sublime Text, I haven’t looked back since.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Things I've Learnt]]></title><description><![CDATA[Things I learnt building stuff.]]></description><link>https://dutzi.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 04 Jan 2020 08:39:02 GMT</lastBuildDate><item><title><![CDATA[Things I Wish Someone Had Told Me Sooner]]></title><description><![CDATA[TS Node ts-node lets you run .ts files from the cli as is they were transpiled .js files. Simply install it: And run a .ts file: Or use it…]]></description><link>https://dutzi.github.io/using-ts-node/</link><guid isPermaLink="false">https://dutzi.github.io/using-ts-node/</guid><pubDate>Sat, 04 Jan 2020 08:13:35 GMT</pubDate><content:encoded>&lt;h2&gt;TS Node&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/TypeStrong/ts-node&quot;&gt;ts-node&lt;/a&gt; lets you run .ts files from the cli as is they were transpiled .js files.&lt;/p&gt;
+&lt;p&gt;Simply install it:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; -g ts-node
+$ &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; -g typescript&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And run a .ts file:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ts-node script.ts&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Or use it as a REPL&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ ts-node&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/remy/nodemon&quot;&gt;Nodemon&lt;/a&gt; even supports it out of the box!&lt;/p&gt;
+&lt;!-- &lt;div class=&quot;dependencies&quot;&gt;
+
+**Dependencies:**
+&lt;span class=&quot;dep&quot;&gt;[@phenomnomnominal/tsquery](https://npmjs.com/package/@phenomnomnominal/tsquery)&lt;/span&gt;
+&lt;span class=&quot;dep&quot;&gt;[yargs](https://npmjs.com/package/yargs)&lt;/span&gt;
+&lt;span class=&quot;dep&quot;&gt;[concurrently](https://npmjs.com/package/concurrently)&lt;/span&gt;
+&lt;span class=&quot;dep&quot;&gt;[fs-extra](https://npmjs.com/package/fs-extra)&lt;/span&gt;
+&lt;span class=&quot;dep&quot;&gt;[openurl](https://npmjs.com/package/openurl)&lt;/span&gt;
+&lt;span class=&quot;dep&quot;&gt;[react](https://npmjs.com/package/react)&lt;/span&gt;
+&lt;span class=&quot;dep&quot;&gt;[react-dom](https://npmjs.com/package/react-dom)&lt;/span&gt;
+&lt;span class=&quot;dep&quot;&gt;[react-helmet](https://npmjs.com/package/react-helmet)&lt;/span&gt;
+&lt;span class=&quot;dep&quot;&gt;[styled-components](https://npmjs.com/package/styled-components)&lt;/span&gt;
+&lt;span class=&quot;dep&quot;&gt;[temp-dir](https://npmjs.com/package/temp-dir)&lt;/span&gt;
+
+&lt;/div&gt; --&gt;</content:encoded></item><item><title><![CDATA[Things I've Learnt Using VSCode]]></title><description><![CDATA[VSCode is one hell of an editor. About two years after it was initially announced I started using it regularly, and, as much as I cherish…]]></description><link>https://dutzi.github.io/using-vscode/</link><guid isPermaLink="false">https://dutzi.github.io/using-vscode/</guid><pubDate>Sat, 04 Jan 2020 06:26:28 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;&lt;strong&gt;VSCode&lt;/strong&gt;&lt;/a&gt; is one hell of an editor. About two years after it was initially announced I started using it regularly, and, as much as I cherish Sublime Text, I haven’t looked back since.&lt;/p&gt;
 &lt;p&gt;Here are some of my favorite extensions.&lt;/p&gt;
 &lt;h2&gt;Naming Is Hard&lt;/h2&gt;
 &lt;p&gt;Naming things is one of the toughest problems I encounter daily while programming.&lt;/p&gt;
