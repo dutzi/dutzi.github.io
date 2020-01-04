@@ -2,6 +2,7 @@
 title: Things I've Learnt Building How-Dep
 date: '2020-01-03T22:37:14.201Z'
 description: 'Going through some interesting concepts I first encountered when building a CLI tool that “counts your imports” and gives you a rough estimation of how dependent you are of your dependencies'
+tags: cli react ssr ts-query
 ---
 
 [**How-dep**](https://github.com/dutzi/how-dep) is a CLI tool that analyzes your TypeScript<sup>1</sup> project, counting how many imports it encounters per each module your project depends on.

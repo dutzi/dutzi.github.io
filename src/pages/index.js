@@ -17,7 +17,11 @@ class BlogIndex extends React.Component {
         <SEO title="All posts" />
         <Bio greeting />
         {posts.map(({ node }) => {
+          console.log(node)
           const title = node.frontmatter.title || node.fields.slug
+          const tags = node.frontmatter.tags
+            ? node.frontmatter.tags.split(' ')
+            : null
           return (
             <article key={node.fields.slug}>
               <header>
@@ -39,6 +43,14 @@ class BlogIndex extends React.Component {
                   }}
                 />
               </section>
+              <div className="tags">
+                {tags &&
+                  tags.map(tag => (
+                    <span key={tag} className="tag">
+                      {tag}
+                    </span>
+                  ))}
+              </div>
             </article>
           )
         })}
@@ -67,6 +79,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            tags
           }
         }
       }

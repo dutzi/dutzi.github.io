@@ -66,7 +66,7 @@ const Bio = ({ greeting }) => {
               color: 'black',
             }}
           >
-            And here are some things I've learnt!
+            And here are some...
           </div>
         </p>
       ) : (
