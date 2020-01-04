@@ -80,3 +80,18 @@ article {
   font-size: 0.85em;
   font-weight: 100;
 }
+
+.sidenote {
+  padding: 2em;
+  border-left: 4px solid #f92aad;
+  background: #bc1f9017;
+  margin: 1.75rem 0px;
+}
+
+.sidenote > *:first-child {
+  margin-top: 0px;
+}
+
+.sidenote > *:last-child {
+  margin-bottom: 0px;
+}
