@@ -1,0 +1,63 @@
+a {
+  color: #f92aad;
+}
+
+.gatsby-highlight {
+  margin-bottom: 1.75rem;
+}
+
+.gatsby-highlight-code-line {
+  display: block;
+  background: #ffffff14;
+  margin: 0px -16px;
+  padding: 0px 16px;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  box-shadow: 0px 0px 40px 0px #0000008f inset;
+  border-radius: 10px;
+}
+
+:not(pre) > code.language-text {
+  background: white;
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0px;
+  font-size: 0.95em;
+}
+
+h3 {
+  color: #888;
+  margin-top: -1.5rem;
+}
+
+.dependencies {
+  border-top: 4px solid #221b2e;
+  padding-top: 0.8rem;
+  padding: 10px 4px;
+  margin-bottom: 1.75rem;
+}
+
+.dependencies > p:last-child {
+  margin-bottom: 0px;
+}
+
+.dependencies .dep {
+  display: inline-block;
+  background: #f3efff;
+  padding: 0px 9px;
+  margin-bottom: 7px;
+  border-radius: 4px;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 0.85em;
+}
+
+.dependencies .dep a {
+  box-shadow: none;
+}
+
+hr {
+  background: #221b2e;
+  height: 4px;
+}
