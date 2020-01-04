@@ -3,9 +3,9 @@ module.exports = {
     title: `Things I've Learnt`,
     author: `dutzi`,
     description: `Things I learnt building stuff.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://dutzi.github.io/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `_dutzi`,
     },
   },
   plugins: [
