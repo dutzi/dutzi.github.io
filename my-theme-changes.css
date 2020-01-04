@@ -27,11 +27,6 @@ pre[class*='language-'] {
   font-size: 0.95em;
 }
 
-h3 {
-  color: #888;
-  margin-top: -1.5rem;
-}
-
 .dependencies {
   border-top: 4px solid #221b2e;
   padding-top: 0.8rem;
