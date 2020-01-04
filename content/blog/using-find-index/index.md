@@ -1,5 +1,5 @@
 ---
-title: Things You Should Know Regarding Array.findIndex
+title: Things You Should Know About Array.findIndex
 date: '2020-01-04T08:51:12.960Z'
 description: 'An short and simple overview of Array.findIndex'
 tags: array findIndex
@@ -28,6 +28,8 @@ arr.findIndex(value => value === 3) // 2
 We are calling `findIndex`, passing it a callback (a method that gets called back).
 The callback gets called per each item in arr, and the first parameter passed to it is the current value.
 
+<div class="sidenote">
+
 #### Experiment
 
 Take a look at the following piece of code. What do you think the output should be?
@@ -41,6 +43,8 @@ Take a look at the following piece of code. What do you think the output should 
 ```
 
 Now try running it in the console, what is the output?
+
+</div>
 
 Back to our example, it was a very simple one, for which we could have easily gone with `indexOf`:
 
