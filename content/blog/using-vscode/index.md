@@ -170,7 +170,7 @@ Here are some other useful shortcuts I set up along the years:
     "key": "cmd+i cmd+r",
     "command": "workbench.action.closeEditorsToTheRight"
   },
-  // And, for completeness, the not so useful "close editor to the left"
+  // And, for completeness, the not so useful close-editor-to-the-left
   {
     "key": "cmd+i cmd+l",
     "command": "workbench.action.closeEditorsToTheLeft"
