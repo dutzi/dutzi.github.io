@@ -134,7 +134,7 @@ I have the following keybindings set up for it:
 
 Coming from Sublime Text, I'm pretty sure the first extension I added was [Sublime Text Keymap and Settings Importer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings) (check [this](https://github.com/Microsoft/vscode-sublime-keybindings#why-dont-all-sublime-text-commands-work) out for even more extensions for people coming from ST).
 
-Here are some other useful shortcuts I set up along the years:
+Here are some other useful keyboard shortcuts I set up along the years:
 
 ```json
 [
