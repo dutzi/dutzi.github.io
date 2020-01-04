@@ -73,7 +73,7 @@ fs<span class="token punctuation">.</span><span class="token function">writeFile
 <p>That’s because the app expects some props, which are now missing.</p>
 <div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> data <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// ...</span></code></pre></div>
 <p>To pass that data, we to add it serialize it and dump it out the HTML file.</p>
-<p>Adding the follwing <code class="language-text">&lt;script&gt;</code> tag within the module responsible of rendering the HTML file will expose everything we need through an object on the window:</p>
+<p>Adding the following <code class="language-text">&lt;script&gt;</code> tag within the module responsible of rendering the HTML file will expose everything we need through an object on the window:</p>
 <div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token operator">&lt;</span>script
   dangerouslySetInnerHTML<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>
     __html<span class="token punctuation">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">window.__HOW_DEP = {
