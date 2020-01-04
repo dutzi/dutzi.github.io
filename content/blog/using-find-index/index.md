@@ -32,8 +32,9 @@ The callback gets called per each item in arr, and the first parameter passed to
 
 Take a look at the following piece of code. What do you think the output should be?
 
+<!-- prettier-ignore -->
 ```js
-;[1, 2, 3, 'some value'].findIndex(value => {
+[1, 2, 3, 'some value'].findIndex(value => {
   console.log(value)
   return false
 })
