@@ -199,7 +199,7 @@ For the favicon to work, I decided to base64 encode it and bake it into a React 
 
 <sup>1</sup> How-dep supports JavaScript as well, just provide it with a basic tsconfig.json file
 
-<div class="dependencies">
+<div class="dependencies test2">
 
 **Dependencies:**
 <span class="dep">[@phenomnomnominal/tsquery](https://npmjs.com/package/@phenomnomnominal/tsquery)</span>
