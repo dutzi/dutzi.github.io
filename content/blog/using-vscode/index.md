@@ -74,7 +74,7 @@ It's nice and it helps some of the time. But sometimes the word I'm looking for 
 
 [File Utils](https://marketplace.visualstudio.com/items?itemName=sleistner.vscode-fileutils) - This extension adds some use file manipulation commands to the Command Palette.
 
-## Others
+## Etc
 
 [Copy JSON Path](https://marketplace.visualstudio.com/items?itemName=nidu.copy-json-path) - Very useful in all sorts of use cases. One that pops to my mind immediately when thinking about this extension is where you need to specifiy the getter string (or JSON path) for an i18n string that resides in some lengthy JSON.
 
