@@ -56,7 +56,18 @@ const Bio = ({ greeting }) => {
       />
       {greeting ? (
         <p style={{ margin: '0' }}>
-          Hey, I'm <strong>{author}!</strong>
+          <span role="img" aria-label="waving hand">
+            👋
+          </span>{' '}
+          I'm <strong>{author}!</strong>
+          <div
+            style={{
+              fontSize: '1em',
+              color: 'black',
+            }}
+          >
+            And here are some things I've learnt!
+          </div>
         </p>
       ) : (
         <p style={{ margin: '0' }}>
