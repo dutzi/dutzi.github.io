@@ -61,3 +61,7 @@ hr {
   background: #221b2e;
   height: 4px;
 }
+
+article {
+  margin-bottom: 5em;
+}
