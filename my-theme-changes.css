@@ -184,9 +184,9 @@ body.dark h6 {
 }
 
 body.dark .tags .tag {
-  color: #676767;
-  text-shadow: 0 1px hsla(0, 0%, 0%, 0.37);
-  background: #131313;
+  color: #cacaca;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.37);
+  background: #4e4e4e;
 }
 
 body.dark blockquote {
