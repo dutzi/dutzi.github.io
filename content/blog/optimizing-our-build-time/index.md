@@ -5,7 +5,7 @@ description: "I'll walk through some of build time optimization techniques we us
 tags: ['array', 'findIndex']
 ---
 
-Where I work (a small-medium startup called [Spot.IM](https://www.spot.im/)) we use Webpack to bundle our products. After about 4 years and who knows how many hands contributing to the source code, our main product's build time reached a staggering **90 seconds** for initial build and **14 seconds** for re-build.
+Where I work at (a small-medium startup called [Spot.IM](https://www.spot.im/)) we use Webpack to bundle our products. After about 4 years and who knows how many hands contributing to the source code, our main product's build time reached a staggering **90 seconds** for initial build and **14 seconds** for re-build.
 
 That's 14 seconds you had to wait every time you hit save.
 
@@ -15,7 +15,7 @@ In this post I will go through some simple changes you can make to improve your 
 
 <div class="sidenote">
 
-**Note:** If you are using [Create React App](https://github.com/facebook/create-react-app) (or any other fancy app generator) this post probably won't matter that much, if not it might help a lot, so keep reading.
+**Note:** If you are using [Create React App](https://github.com/facebook/create-react-app) (or any other fancy app generator) this post probably won't matter that much to you, if not it might help a lot, so keep reading!
 
 </div>
 
@@ -34,7 +34,7 @@ const smp = new SpeedMeasurePlugin({
 module.exports = smp.wrap(webpackConfig)
 ```
 
-We wrap the Webpack config file with SMP (which we enable through an environment variable), later we pass that config object to Webpack, which will now print a nice report specifying each loader's processing time per each build. This way we win in two frontiers, one is that we get immediate feedback to our optimization attempts and the other is that we instantly get a full report of how long each loader (or actually "chain of loaders") took:
+We wrap the Webpack config file with SMP (which we enable through an environment variable), later we pass that config object to Webpack, which will then print a nice report specifying each loader's processing time per each build. This way we win in two frontiers, one is that we get immediate feedback to our optimization attempts and the other is that we instantly get a full report of how long each loader (or actually "chain of loaders") took:
 
 <div class="imageWrapper" style="width: 467px">
 
@@ -81,7 +81,7 @@ Now let's tackle the re-build time, to do that we'll modify a property called `d
 
 ## Webpack Source Maps
 
-Within Webpack's configuration you'll find something called `devtool`, which according to the [docs](https://webpack.js.org/configuration/devtool/#devtool) lets you:
+Within Webpack's configuration you'll find something called `devtool`, which according to the [docs](https://webpack.js.org/configuration/devtool/) lets you:
 
 > Choose a style of source mapping to enhance the debugging process. These values can affect build and rebuild speed dramatically.
 
@@ -97,7 +97,7 @@ Playing with this one was a life changing experience. I really can't emphasize t
 }
 ```
 
-Create React App [uses `cheap-module-source-map`](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/config/webpack.config.js#L157), so play with it and see what's good for your needs.
+There are 12 different variants, Create React App [uses `cheap-module-source-map`](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/config/webpack.config.js#L153-L157), so play with it and see what's good for your needs.
 
 What you lose here is the quality of the source maps generated, and you feel the degradation once you start debugging the code. Luckily, browsers right now are keeping up the pace with TC39, so (at least while developing) you don't really need to transpile a lot of your code. If you set Babel up so that it will transpile Javascript to the latest browser version (as [CRA does](https://github.com/facebook/create-react-app/blob/7ac8150af37d4f5617f4218619a2b607f2e20d56/packages/react-scripts/package.json#L98-L102)) you should be fine, as the source maps won't be too far off from the code itself.
 
@@ -122,6 +122,14 @@ module.exports = {
 ```
 
 And that's it. 3 simple steps and our build time decreased significantly. Next time I will share how we later added Hot Module Replacement, a configuration that helped save precious time and improve the feedback loop we experience while developing.
+
+## Learn From The Best
+
+When approaching such a task, the first idea that comes to mind is to delve in Webpack's docs and see what we could find. But it's not the only one.
+
+A different approach I found, that has really proven itself, was to go through `webpack.config` files of existing open source projects. Specifically, [Create React App's](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/config/webpack.config.js) one. There's **a lot** you can learn from it.
+
+I will definitely keep this approach, of learning from the best, in mind in future tasks.
 
 ## Wait, You Said 1 Second.
 
