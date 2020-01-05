@@ -6,4 +6,4 @@
 yarn deploy
 ```
 
-From site branch.
+From `site` branch.

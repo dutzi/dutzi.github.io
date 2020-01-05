@@ -26,6 +26,7 @@
     "gatsby-transformer-remark": "^2.6.39",
     "gatsby-transformer-sharp": "^2.3.7",
     "gh-pages": "^2.1.1",
+    "hyvor-talk-react": "^1.0.1",
     "prismjs": "^1.17.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -57,6 +58,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build && gh-pages -d public -b master && now --prod"
+    "deploy": "gatsby build && gh-pages -d public -b master && now --prod",
+    "copy-date": "echo \"console.log(new Date().toISOString())\" | node | pbcopy"
   }
 }

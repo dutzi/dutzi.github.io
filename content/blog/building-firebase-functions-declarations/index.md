@@ -24,9 +24,9 @@ const response = await myFunction(data)
 
 Where `response` will be typed to be whatever `myFunction` returns, and `data` will be type checked, making sure you provide the right type.
 
-## How it works
+## How Does It Work
 
-When creating Firebase Function you'd normally create an index file which imports all function and exports them. This is the entry point for Firebase Functions.
+When creating Firebase Functions you'd normally create an index file which imports all function and exports them. This is the entry point for Firebase Functions.
 
 Each function module usually looks something like:
 
@@ -36,7 +36,7 @@ export default functions.https.onCall(async (data, context) {
 });
 ```
 
-Ideally, my tool would "scrape" the function passed to `functions.https.onCall` and infer its argument and return types.
+Ideally, my tool would extract the function passed to `functions.https.onCall` and infer its argument and return types.
 
 This could be done using the [TypeScript compiler](https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API) and other tools (like [ts-query](https://github.com/phenomnomnominal/tsquery) or [ts-morph](https://github.com/dsherret/ts-morph)), but because I only learnt about these methods after making this tool I went for a different approach. Maybe someday I'll revisit this tool and introduce these changes, but for now it's good enough.
 
@@ -78,7 +78,7 @@ import { impl as myFunctionImpl } from './functions/my-function'
 
 <div class="sidenote">
 
-**Note:** Since I ran `tsc` emitting declaration files only, `functions/my-function.ts` does **not** exist, but `functions/my-function.d.ts` does and that's all I need.
+**Note:** Since I ran `tsc` emitting declaration files only, `functions/my-function.js` does **not** exist, but `functions/my-function.d.ts` does and that's all I need.
 
 </div>
 
@@ -104,7 +104,7 @@ And there you have it, a module that exposes typed functions for your API!
 
 As I wrote above, this whole making-the-user-do-stuff for this tool to work is not the best approach, especially since this work _can_ be automated. But, the counter approach of making-me-do-stuff-for-the-user is also not the best one since I'm lazy.
 
-But that's not what I wanted to raise, the bigger problem with such a tool is that when the types exposed in a function's signature are ones declared within the Firebase Functions package's `node_modules`. In this case there is no way to share types betweens the functions and app's codebase.
+But that's not what I wanted to raise, the bigger problem with such a tool is that when the types exposed in a function's signature are ones declared within the Firebase Functions package's `node_modules`. In this case there is ~~no way~~ no simple way to share types betweens the functions and app's codebase.
 
 I made some pretty big projects so far using Firebase and haven't encountered this issue. But I can image some pretty trivial use cases where this might be a deal-breaker.
 

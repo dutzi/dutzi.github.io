@@ -1,7 +1,7 @@
 ---
 title: Things I Wish Someone Had Told Me Sooner
 date: '2020-01-04T08:13:35.942Z'
-description: 'Running .ts files straight from the command line using ts-node'
+description: 'Running .ts files straight from the command line using ts-node.'
 tags: ['ts-node', 'typescript', 'cli', 'node']
 ---
 

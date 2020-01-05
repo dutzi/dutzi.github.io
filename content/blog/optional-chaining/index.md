@@ -1,7 +1,7 @@
 ---
-title: Optional Chaining Do's and Dont's
+title: Optional Chaining Tips
 date: '2020-01-05T00:27:09.819Z'
-description: 'A quick reference guide (or Cheat Sheet) for Optional Chaining'
+description: 'A quick reference guide for Optional Chaining.'
 tags: ['esnext', 'optional-chaining']
 ---
 
