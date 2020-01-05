@@ -1,7 +1,7 @@
 ---
 title: Things I've Learnt Building How-Dep
 date: '2020-01-03T22:37:14.201Z'
-description: 'Going through some interesting concepts I first encountered when building a CLI tool that “counts your imports” and gives you a rough estimation of how dependent you are of your dependencies.'
+description: 'Going through some interesting concepts I first encountered when building a CLI tool that “counts your imports” and gives you a rough estimation of how dependent you are of your dependencies'
 tags: ['cli', 'react', 'ssr', 'ts-query']
 ---
 
