@@ -100,3 +100,109 @@ article {
 header h3 {
   color: #aaa;
 }
+
+.imageWrapper {
+  margin: auto;
+}
+
+/* Dark Mode */
+
+.darkModeButtonWrapper {
+  position: relative;
+}
+
+.darkModeButton {
+  position: absolute;
+  z-index: 100;
+  background: none;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border: none;
+  padding: 0px;
+  right: -50px;
+  margin-top: 20px;
+}
+
+@media (max-width: 576px) {
+  .darkModeButton {
+    right: 0px;
+  }
+}
+
+.darkModeButton .moon1 {
+  position: absolute;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: #222222;
+}
+
+.darkModeButton .moon2 {
+  position: absolute;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+  top: -7px;
+  left: -9px;
+  background: white;
+}
+
+body.dark .darkModeButton .moon1 {
+  background: #ffffff;
+}
+
+body.dark .darkModeButton .moon2 {
+  background: #2f2f2f;
+}
+
+body.dark {
+  background: #2f2f2f;
+  color: #e2d8d8;
+}
+
+body.dark :not(pre) > code[class*='language-'],
+body.dark pre[class*='language-'] {
+  box-shadow: 0 0 10px 6px rgba(19, 19, 19, 0.38), 0px 3px;
+  background: linear-gradient(180deg, #3a2b54 75%, #2a223a);
+}
+
+body.dark :not(pre) > code.language-text {
+  background: white;
+  box-shadow: none;
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6 {
+  color: #ffffff;
+}
+
+body.dark .tags .tag {
+  color: #676767;
+  text-shadow: 0 1px hsla(0, 0%, 0%, 0.37);
+  background: #131313;
+}
+
+body.dark blockquote {
+  color: hsla(0, 0%, 100%, 0.59);
+  border-left-color: hsla(0, 0%, 87%, 0.9);
+}
+
+body.dark .sidenote {
+  background: rgba(0, 0, 0, 0.21);
+  border-left-color: #b32480;
+}
+
+body.dark .dependencies {
+  border-top-color: #b82382;
+}
+
+body.dark .dependencies .dep {
+  background: #1d1d1d;
+}

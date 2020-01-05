@@ -1,4 +1,118 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Things I've Learnt]]></title><description><![CDATA[Things I learnt building stuff.]]></description><link>https://dutzi.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 05 Jan 2020 02:18:22 GMT</lastBuildDate><item><title><![CDATA[Optional Chaining Do's and Dont's]]></title><description><![CDATA[Syntax Getting Props Setting Props Optional chaining cannot appear in the left hand side of an assignment operator. Arrays Calling Methods…]]></description><link>https://dutzi.github.io/optional-chaining/</link><guid isPermaLink="false">https://dutzi.github.io/optional-chaining/</guid><pubDate>Sun, 05 Jan 2020 00:27:09 GMT</pubDate><content:encoded>&lt;h2&gt;Syntax&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Things I've Learnt]]></title><description><![CDATA[Things I learnt building stuff.]]></description><link>https://dutzi.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 05 Jan 2020 20:10:58 GMT</lastBuildDate><item><title><![CDATA[Things I Learnt Optimizing Our Build Time]]></title><description><![CDATA[Where I work (a small-medium startup called Spot.IM) we use Webpack to bundle our products. After about 4 years and who knows how many hands…]]></description><link>https://dutzi.github.io/optimizing-our-build-time/</link><guid isPermaLink="false">https://dutzi.github.io/optimizing-our-build-time/</guid><pubDate>Sun, 05 Jan 2020 18:24:12 GMT</pubDate><content:encoded>&lt;p&gt;Where I work (a small-medium startup called &lt;a href=&quot;https://www.spot.im/&quot;&gt;Spot.IM&lt;/a&gt;) we use Webpack to bundle our products. After about 4 years and who knows how many hands contributing to the source code, our main product’s build time reached a staggering &lt;strong&gt;90 seconds&lt;/strong&gt; for initial build and &lt;strong&gt;14 seconds&lt;/strong&gt; for re-build.&lt;/p&gt;
+&lt;p&gt;That’s 14 seconds you had to wait every time you hit save.&lt;/p&gt;
+&lt;p&gt;Applying some easy wins which anyone can introduce to their stack we were able to slice those numbers down to &lt;strong&gt;20 seconds&lt;/strong&gt; for build and &lt;strong&gt;1 second&lt;/strong&gt; for re-build.&lt;/p&gt;
+&lt;p&gt;In this post I will go through some simple changes you can make to improve your bundle’s build time.&lt;/p&gt;
+&lt;div class=&quot;sidenote&quot;&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; If you are using &lt;a href=&quot;https://github.com/facebook/create-react-app&quot;&gt;Create React App&lt;/a&gt; (or any other fancy app generator) this post probably won’t matter that much, if not it might help a lot, so keep reading.&lt;/p&gt;
+&lt;/div&gt;
+&lt;h2&gt;Measuring Success&lt;/h2&gt;
+&lt;p&gt;Before we do anything, let’s set up a way to measure our improvement. To do that we’ll use a tool called &lt;a href=&quot;https://www.npmjs.com/package/speed-measure-webpack-plugin&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;speed-measure-webpack-plugin&lt;/code&gt;&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; webpackConfig &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;./webpack.config&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; SpeedMeasurePlugin &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;speed-measure-webpack-plugin&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; smp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;SpeedMeasurePlugin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  disable&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;process&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;env&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;MEASURE&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; smp&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;wrap&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;webpackConfig&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We wrap the Webpack config file with SMP (which we enable through an environment variable), later we pass that config object to Webpack, which will now print a nice report specifying each loader’s processing time per each build. This way we win in two frontiers, one is that we get immediate feedback to our optimization attempts and the other is that we instantly get a full report of how long each loader (or actually “chain of loaders”) took:&lt;/p&gt;
+&lt;div class=&quot;imageWrapper&quot; style=&quot;width: 467px&quot;&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/49f7f7ca8ea203f2f6a9048f0a050adb/0a7ed/smp-report%402x.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 177.51605995717347%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAkCAYAAACJ8xqgAAAACXBIWXMAABYlAAAWJQFJUiTwAAADv0lEQVRIx61WaW/jNhS0LFknRVE8JOqyLTs+YzvepN2i2SIFdrf//ydNn7XFop9qO+kHgoCOAefNvHkcOYEDL/GQxAlGo9HHl1mWmB17HPYHCCGQsAScc/AsA2cMdRyhpmcqDG8DjOiHKIkRBMEAGEURQvo5vOy+Dz72ICa0e5PbAFmXwu4qHHYHdNMO0+mMwH04jgM3cOEKAgrGGHnObYDH4wmvr3/g67evePvzDd//+o7dfo9lv4Q5lijeLJI2QaCC2wDX6y22my2ePp2x2W7QtR2KeYnsgejbGOPJ+OfHjnMDYJCGSBVHIQsSgSMOEzijf+g571A5O+coXyusXtZoji2qTY10wZH0DGmewmiFqiKl6xjWRtcBY5lgup9DNAJ2WYHTacupRTEt4E7cQaAwdH+uq4BiJ6H2GvqlhDzqgbrk6gPG/mKhvhiIJwn5WcM8EvBOI+5iiC0ZnTNkZPKbAdM+G+yRLXIUzwTeaTR9jdVeYb7J0LQpPM+7HTDWVMPtDHpu0OxayFyhrRuwOB4+cMd3UuYbAX4UMG8l+IKEqSpM/OD9Ncwec2RHWocc6tlAtgq2NGBsQn3tYnzvCVnDUW8bFPtysE1la+pnjc1aU9fE8P/VKbeJMiPAYwO9MyiOJIpS0Kagl877KOdPCvxRQP6iITY5DPmQxewDNbzU7rVA/knCrAqoBw3fBkMwxF0CxlPyIacWDFCWEfL8imBJwbA4L6Ea8t+ebNMp1A81QhlhIn0EFLaX0GXMI2B/EOu/bUMxpah+6myGDjHCIE/z91Mu3irI3xTyZ1q0m3UBsyvglwHYIkUqONEkn5qA0iaGvha0l7TpT0S5pg5Zd8gXcmg/WRl6OSaT+8O8uXjyQjeOr7RhuswGuvmJTriWKE90Ypvioa+QEoBzL+W05Zg9zVHuLZpVC2sqzOcWPZ3UliEm9xo7Lhmq/Q9j26aiXrbINxrJLINfxXDuBiTbdLspzLJARXYxRYEs53BcGqP++P65kh3kkDb6C6XNWaA0FlJ9ILFZT7Z4JGVfzKCwsYZuDOH7AQX1cnYSEGcJ/bkYhpNdkMJLDl8GcCP3zhpqhtmWVF5Z1NOGVLaDJ+VcwcsmcMM7AQcfngz0rxQQTU5WsQhp+Ps8wJhEcbzxfUOf0RCqHpshC8veoi1bpBVHuuIIbDjcHe9TeZmj/32BfCpRP7UQS4mcZvUlbXSmwWoGTtMvbhL4wr8OGHK6ZiwaZDpD0dD9RmWIsghe4FGXUA19mit0nftB/6YUH+H/XH8DTTwbrO3mTq0AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;SMP Report&quot;
+        title=&quot;SMP Report&quot;
+        src=&quot;/static/49f7f7ca8ea203f2f6a9048f0a050adb/799d3/smp-report%402x.png&quot;
+        srcset=&quot;/static/49f7f7ca8ea203f2f6a9048f0a050adb/00d96/smp-report%402x.png 148w,
+/static/49f7f7ca8ea203f2f6a9048f0a050adb/0b23c/smp-report%402x.png 295w,
+/static/49f7f7ca8ea203f2f6a9048f0a050adb/799d3/smp-report%402x.png 590w,
+/static/49f7f7ca8ea203f2f6a9048f0a050adb/2a3d6/smp-report%402x.png 885w,
+/static/49f7f7ca8ea203f2f6a9048f0a050adb/0a7ed/smp-report%402x.png 934w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- &lt;img src=&quot;./smp-report@2x.png&quot; style=&quot;width: 467px; background: red&quot;/&gt; --&gt;
+&lt;h2&gt;Improving Initial Build Time&lt;/h2&gt;
+&lt;p&gt;After setting up SMP, we can start seeing how our build time changes as we make improvements, the first thing we’ll tackle is the initial build time (i.e., the time it takes for Webpack to bundle our package since it has been initialized), we’ll use a loader called &lt;code class=&quot;language-text&quot;&gt;cache-loader&lt;/code&gt; to do that.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/webpack-contrib/cache-loader&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Cache-loader&lt;/code&gt;&lt;/a&gt; is a Webpack loader that caches the results of loaders preceding it on disk (or database). Meaning the &lt;em&gt;next time&lt;/em&gt; you run Webpack you’ll (hopefully) see a significant improvement.&lt;/p&gt;
+&lt;p&gt;Set up example:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  rules&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      test&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token regex&quot;&gt;/\.jsx?$/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      use&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;        &lt;span class=&quot;token string&quot;&gt;&apos;cache-loader&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/span&gt;        &lt;span class=&quot;token string&quot;&gt;&apos;babel-loader&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      test&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token regex&quot;&gt;/\.scss$/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      use&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;token string&quot;&gt;&apos;style-loader&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;        &lt;span class=&quot;token string&quot;&gt;&apos;cache-loader&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/span&gt;        &lt;span class=&quot;token string&quot;&gt;&apos;css-loader&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token string&quot;&gt;&apos;postcss-loader&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token string&quot;&gt;&apos;sass-loader&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Adding it before &lt;a href=&quot;https://www.npmjs.com/package/css-loader&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;css-loader&lt;/code&gt;&lt;/a&gt; (for CSS) and before &lt;a href=&quot;https://www.npmjs.com/package/babel-loader/&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;babel-loader&lt;/code&gt;&lt;/a&gt; (for JS) we were able to shave off around &lt;strong&gt;75 seconds&lt;/strong&gt; from the initial build time.&lt;/p&gt;
+&lt;p&gt;Now let’s tackle the re-build time, to do that we’ll modify a property called &lt;code class=&quot;language-text&quot;&gt;devtool&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Webpack Source Maps&lt;/h2&gt;
+&lt;p&gt;Within Webpack’s configuration you’ll find something called &lt;code class=&quot;language-text&quot;&gt;devtool&lt;/code&gt;, which according to the &lt;a href=&quot;https://webpack.js.org/configuration/devtool/#devtool&quot;&gt;docs&lt;/a&gt; lets you:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Choose a style of source mapping to enhance the debugging process. These values can affect build and rebuild speed dramatically.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In other words, modifying it will change what type of source maps you’ll get, and more importantly, how long you’ll have to wait until you get it.&lt;/p&gt;
+&lt;p&gt;Playing with this one was a life changing experience. I really can’t emphasize this enough. We changed it from &lt;code class=&quot;language-text&quot;&gt;source-map&lt;/code&gt; (which is possibly the slowest one) to &lt;code class=&quot;language-text&quot;&gt;eval-source-map&lt;/code&gt; and were able to improve our re-build time from 14 seconds down to 3.5 seconds.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  devtool&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; process&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;env&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;NODE_ENV&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;development&apos;&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;eval-source-map&apos;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;source-map&apos;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Create React App &lt;a href=&quot;https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/config/webpack.config.js#L157&quot;&gt;uses &lt;code class=&quot;language-text&quot;&gt;cheap-module-source-map&lt;/code&gt;&lt;/a&gt;, so play with it and see what’s good for your needs.&lt;/p&gt;
+&lt;p&gt;What you lose here is the quality of the source maps generated, and you feel the degradation once you start debugging the code. Luckily, browsers right now are keeping up the pace with TC39, so (at least while developing) you don’t really need to transpile a lot of your code. If you set Babel up so that it will transpile Javascript to the latest browser version (as &lt;a href=&quot;https://github.com/facebook/create-react-app/blob/7ac8150af37d4f5617f4218619a2b607f2e20d56/packages/react-scripts/package.json#L98-L102&quot;&gt;CRA does&lt;/a&gt;) you should be fine, as the source maps won’t be too far off from the code itself.&lt;/p&gt;
+&lt;p&gt;Here’s how your &lt;code class=&quot;language-text&quot;&gt;babel.config.js&lt;/code&gt; should look like should you want to transpile to the latest browser versions:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  presets&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;token string&quot;&gt;&apos;@babel/preset-env&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        targets&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+          &lt;span class=&quot;token string&quot;&gt;&apos;last 1 chrome version&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;token string&quot;&gt;&apos;last 1 safari version&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;token string&quot;&gt;&apos;last 1 firefox version&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;, &apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// ...&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And that’s it. 3 simple steps and our build time decreased significantly. Next time I will share how we later added Hot Module Replacement, a configuration that helped save precious time and improve the feedback loop we experience while developing.&lt;/p&gt;
+&lt;h2&gt;Wait, You Said 1 Second.&lt;/h2&gt;
+&lt;p&gt;You’re right!&lt;/p&gt;
+&lt;p&gt;We were able to slice 2.5 more seconds, but it was by making a bunch of changes that were very domain specific, where the domain I refer to is our (Spot.IM’s) needs. So sharing them down here just doesn’t make much sense.&lt;/p&gt;
+&lt;div class=&quot;dependencies&quot;&gt;
+&lt;p&gt;&lt;strong&gt;Dependencies:&lt;/strong&gt;
+&lt;span class=&quot;dep&quot;&gt;&lt;a href=&quot;https://www.npmjs.com/package/speed-measure-webpack-plugin&quot;&gt;speed-measure-webpack-plugin&lt;/a&gt;&lt;/span&gt;
+&lt;span class=&quot;dep&quot;&gt;&lt;a href=&quot;https://github.com/webpack-contrib/cache-loader&quot;&gt;cache-loader&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Optional Chaining Tips]]></title><description><![CDATA[Syntax Getting Props Setting Props Optional chaining cannot appear in the left hand side of an assignment operator. Arrays Calling Methods…]]></description><link>https://dutzi.github.io/optional-chaining/</link><guid isPermaLink="false">https://dutzi.github.io/optional-chaining/</guid><pubDate>Sun, 05 Jan 2020 00:27:09 GMT</pubDate><content:encoded>&lt;h2&gt;Syntax&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;obj&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prop
 obj&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;expr&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
 arr&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;index&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
@@ -57,13 +171,13 @@ counter              &lt;span class=&quot;token comment&quot;&gt;// 0&lt;/span&g
 
 &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; response &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;myFunction&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Where &lt;code class=&quot;language-text&quot;&gt;response&lt;/code&gt; will be typed to be whatever &lt;code class=&quot;language-text&quot;&gt;myFunction&lt;/code&gt; returns, and &lt;code class=&quot;language-text&quot;&gt;data&lt;/code&gt; will be type checked, making sure you provide the right type.&lt;/p&gt;
-&lt;h2&gt;How it works&lt;/h2&gt;
-&lt;p&gt;When creating Firebase Function you’d normally create an index file which imports all function and exports them. This is the entry point for Firebase Functions.&lt;/p&gt;
+&lt;h2&gt;How Does It Work&lt;/h2&gt;
+&lt;p&gt;When creating Firebase Functions you’d normally create an index file which imports all function and exports them. This is the entry point for Firebase Functions.&lt;/p&gt;
 &lt;p&gt;Each function module usually looks something like:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; functions&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;https&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;onCall&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; context&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;token comment&quot;&gt;// firebase function body...&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Ideally, my tool would “scrape” the function passed to &lt;code class=&quot;language-text&quot;&gt;functions.https.onCall&lt;/code&gt; and infer its argument and return types.&lt;/p&gt;
+&lt;p&gt;Ideally, my tool would extract the function passed to &lt;code class=&quot;language-text&quot;&gt;functions.https.onCall&lt;/code&gt; and infer its argument and return types.&lt;/p&gt;
 &lt;p&gt;This could be done using the &lt;a href=&quot;https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API&quot;&gt;TypeScript compiler&lt;/a&gt; and other tools (like &lt;a href=&quot;https://github.com/phenomnomnominal/tsquery&quot;&gt;ts-query&lt;/a&gt; or &lt;a href=&quot;https://github.com/dsherret/ts-morph&quot;&gt;ts-morph&lt;/a&gt;), but because I only learnt about these methods after making this tool I went for a different approach. Maybe someday I’ll revisit this tool and introduce these changes, but for now it’s good enough.&lt;/p&gt;
 &lt;h3&gt;Step 1 - Creating the Declarations&lt;/h3&gt;
 &lt;p&gt;My approach was to require the author of the function to introduce the following change the function’s module - in addition to &lt;code class=&quot;language-text&quot;&gt;default export&lt;/code&gt;-ing the return value of &lt;code class=&quot;language-text&quot;&gt;functions.https.onCall&lt;/code&gt;, export the callback &lt;em&gt;passed to&lt;/em&gt; &lt;code class=&quot;language-text&quot;&gt;functions.https.onCall&lt;/code&gt; as a function named &lt;code class=&quot;language-text&quot;&gt;impl&lt;/code&gt;.&lt;/p&gt;
@@ -106,7 +220,7 @@ counter              &lt;span class=&quot;token comment&quot;&gt;// 0&lt;/span&g
 &lt;p&gt;And there you have it, a module that exposes typed functions for your API!&lt;/p&gt;
 &lt;h2&gt;Caveats&lt;/h2&gt;
 &lt;p&gt;As I wrote above, this whole making-the-user-do-stuff for this tool to work is not the best approach, especially since this work &lt;em&gt;can&lt;/em&gt; be automated. But, the counter approach of making-me-do-stuff-for-the-user is also not the best one since I’m lazy.&lt;/p&gt;
-&lt;p&gt;But that’s not what I wanted to raise, the bigger problem with such a tool is that when the types exposed in a function’s signature are ones declared within the Firebase Functions package’s &lt;code class=&quot;language-text&quot;&gt;node_modules&lt;/code&gt;. In this case there is no way to share types betweens the functions and app’s codebase.&lt;/p&gt;
+&lt;p&gt;But that’s not what I wanted to raise, the bigger problem with such a tool is that when the types exposed in a function’s signature are ones declared within the Firebase Functions package’s &lt;code class=&quot;language-text&quot;&gt;node_modules&lt;/code&gt;. In this case there is &lt;del&gt;no way&lt;/del&gt; no simple way to share types betweens the functions and app’s codebase.&lt;/p&gt;
 &lt;p&gt;I made some pretty big projects so far using Firebase and haven’t encountered this issue. But I can image some pretty trivial use cases where this might be a deal-breaker.&lt;/p&gt;
 &lt;div class=&quot;dependencies&quot;&gt;
 &lt;p&gt;&lt;strong&gt;Dependencies:&lt;/strong&gt;
