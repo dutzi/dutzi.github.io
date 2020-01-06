@@ -26,6 +26,14 @@ class BlogPostTemplate extends React.Component {
                 marginBottom: 0,
               }}
             >
+              <a
+                className="editPostLink"
+                href={`https://github.com/dutzi/dutzi.github.io/edit/site/content/blog/${this.props.uri.substr(
+                  1
+                )}/index.md`}
+              >
+                ✎
+              </a>
               {post.frontmatter.title}
             </h1>
             <p

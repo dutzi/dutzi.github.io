@@ -62,6 +62,13 @@ article {
   margin-bottom: 5em;
 }
 
+article header h1 a.editPostLink {
+  color: inherit;
+  box-shadow: none;
+  position: absolute;
+  transform: translateX(calc(-100% - 10px));
+}
+
 .tags {
   margin-top: -1.75rem;
   margin-bottom: 1.75rem;
@@ -122,17 +129,23 @@ pre::-webkit-scrollbar-thumb {
   height: 6px;
 }
 
+/* Mobile */
+
 @media (max-width: 576px) {
   h1 {
     max-width: 330px;
   }
+
+  article header h1 a.editPostLink {
+    display: none;
+  }
 }
 
-footer {
+footer.pageFooter {
   text-align: center;
 }
 
-footer a {
+footer.pageFooter a {
   box-shadow: none;
 }
 
@@ -238,6 +251,6 @@ body.dark .dependencies .dep {
   background: #1d1d1d;
 }
 
-body.dark footer svg {
+body.dark footer.pageFooter svg {
   fill: #e2d8d8;
 }
