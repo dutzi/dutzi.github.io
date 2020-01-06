@@ -146,11 +146,12 @@ pre::-webkit-scrollbar-thumb {
   }
 }
 
-footer.pageFooter {
+div.pageFooter {
   text-align: center;
+  margin-bottom: 2em;
 }
 
-footer.pageFooter a {
+div.pageFooter a {
   box-shadow: none;
 }
 
@@ -167,7 +168,8 @@ footer.pageFooter a {
   background: #1c1527;
   /* transform: rotate(1deg); */
   /* border-top: 15px solid #3a2b54; */
-  box-shadow: 0px 15px 43px #00000094 inset, 0px 0px 0px 1px #ffffff1f;
+  box-shadow: 0px 15px 43px #00000094 inset, 0px 3px 1px #00000094 inset,
+    0px 0px 0px 1px #ffffff1f;
 }
 
 .github-conversation-wrapper {
@@ -316,7 +318,7 @@ body.dark .dependencies .dep {
   background: #1d1d1d;
 }
 
-body.dark footer.pageFooter svg {
+body.dark div.pageFooter svg {
   fill: #e2d8d8;
 }
 
@@ -453,8 +455,7 @@ body.dark footer.pageFooter svg {
   /* background-color: #130d1b; */
   background: linear-gradient(#130d1b 80%, #271a38);
   border-radius: 10px;
-  border-bottom: 2px solid #f52aad;
-  box-shadow: 0px 0px 3px -1px #f42aad;
+  box-shadow: 0 0 3px -1px #f42aad, 0px 2px 2px -1px #f52aad;
 }
 
 .conversation-outer-wrapper .gt-container .gt-comment-body {
@@ -464,10 +465,6 @@ body.dark footer.pageFooter svg {
 
 .conversation-outer-wrapper .markdown-body {
   font-family: inherit !important;
-}
-
-.conversation-outer-wrapper .gt-container .gt-comment-content:hover {
-  box-shadow: none;
 }
 
 .conversation-outer-wrapper .gt-container .gt-link {
@@ -542,8 +539,8 @@ body.dark footer.pageFooter svg {
   line-height: 1.8em;
   background-color: #130c1b;
   color: white;
-  box-shadow: 0px 0px 0px 0px #f52aad, 0px 0px 0px 2px #f52aad,
-    0px 10px 10px -10px inset #f52aad;
+  box-shadow: 0px 0px 0px 0px #f52aad, 0px 0px 0px 0.3px #f52aad,
+    0px -6px 30px -20px inset #f52aad;
 }
 
 .conversation-outer-wrapper .gt-container .gt-header-textarea:focus {
@@ -605,13 +602,22 @@ body.dark footer.pageFooter svg {
   font-size: inherit;
   font-weight: inherit;
   margin-left: 0.75em !important;
+  box-shadow: 0px 10px 10px #00000085;
 }
 
-.conversation-outer-wrapper .gt-container .gt-btn-public:hover {
+.conversation-outer-wrapper
+  .gt-container
+  .gt-header-controls
+  .gt-btn.gt-btn-public
+  .gt-btn-public:hover {
   background-color: #f52aad;
 }
 
-.conversation-outer-wrapper .gt-container .gt-btn-public:focus {
+.conversation-outer-wrapper
+  .gt-container
+  .gt-header-controls
+  .gt-btn.gt-btn-public
+  .gt-btn-public:focus {
   box-shadow: 0px 0px 0px 2px #f52aad;
 }
 
@@ -652,4 +658,50 @@ body.dark footer.pageFooter svg {
   font-family: Montserrat, sans-serif;
   font-weight: 600;
   text-rendering: optimizeLegibility;
+}
+
+.conversation-outer-wrapper .gt-container .gt-comment-date {
+  color: #7d2873;
+}
+
+/* .conversation-outer-wrapper .gt-container .gt-comment-header {
+  background: linear-gradient(transparent, #28122a);
+  border-bottom: 1px solid #44193f;
+  margin: 0px -16px 0.5em;
+  padding: 0px 16px 0.5em;
+} */
+
+.conversation-outer-wrapper
+  .gt-container
+  .gt-comment-admin
+  .gt-comment-content {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.conversation-outer-wrapper .gt-container .gt-comment-header {
+  margin-top: 0.5em;
+  margin-bottom: 0px;
+}
+
+.conversation-outer-wrapper .gt-container .gt-counts {
+  font-size: 0.5em;
+  color: white;
+  font-weight: normal;
+}
+
+.conversation-outer-wrapper .gt-counts:before {
+  content: 'Conversation ';
+  font-size: 2em;
+  color: #f52aad;
+  font-weight: 900;
+}
+
+.conversation-outer-wrapper .gt-container .gt-header-controls {
+  margin-top: 1.15em;
+}
+
+.conversation-outer-wrapper .markdown-body h1,
+.conversation-outer-wrapper .markdown-body h2 {
+  border-bottom-color: #44193f;
 }
