@@ -172,8 +172,6 @@ div.pageFooter a {
   background: #1c1527;
   /* transform: rotate(1deg); */
   /* border-top: 15px solid #3a2b54; */
-  box-shadow: 0px 15px 43px #00000094 inset, 0px 3px 1px #00000094 inset,
-    0px 0px 0px 1px #ffffff1f;
 }
 
 .github-conversation-wrapper {
@@ -457,9 +455,8 @@ body.dark div.pageFooter svg {
   .gt-comment-admin
   .gt-comment-content {
   /* background-color: #130d1b; */
-  background: linear-gradient(#130d1b 80%, #271a38);
+  background: #130d1b;
   border-radius: 10px;
-  box-shadow: 0 0 3px -1px #f42aad, 0px 2px 2px -1px #f52aad;
 }
 
 .conversation-outer-wrapper .gt-container .gt-comment-body {
@@ -543,13 +540,10 @@ body.dark div.pageFooter svg {
   line-height: 1.8em;
   background-color: #130c1b;
   color: white;
-  box-shadow: 0px 0px 0px 0px #f52aad, 0px 0px 0px 0.3px #f52aad,
-    0px -6px 30px -20px inset #f52aad;
 }
 
 .conversation-outer-wrapper .gt-container .gt-header-textarea:focus {
-  box-shadow: 0px 0px 22px 0px #f52aad, 0px 0px 0px 2px #f52aad,
-    0px 0px 0px 0px inset #f52aad;
+  box-shadow: 0px 0px 0px 2px #f52aad;
   /* transform: scale(1.01); */
 }
 
@@ -606,7 +600,6 @@ body.dark div.pageFooter svg {
   font-size: inherit;
   font-weight: inherit;
   margin-left: 0.75em !important;
-  box-shadow: 0px 10px 10px #00000085;
 }
 
 .conversation-outer-wrapper
