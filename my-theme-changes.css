@@ -166,7 +166,7 @@ footer.pageFooter a {
   margin-bottom: -100px;
   background: #1c1527;
   /* transform: rotate(1deg); */
-  border-top: 15px solid #3a2b54;
+  /* border-top: 15px solid #3a2b54; */
   box-shadow: 0px 15px 43px #00000094 inset, 0px 0px 0px 1px #ffffff1f;
 }
 
@@ -522,6 +522,9 @@ body.dark footer.pageFooter svg {
 .conversation-outer-wrapper .markdown-body .highlight pre,
 .conversation-outer-wrapper .markdown-body pre {
   background: #1d1526;
+  box-shadow: 0px 10px 30px -14px black inset;
+  border: 1px solid #351b3e;
+  border-radius: 8px;
 }
 
 .conversation-outer-wrapper .gt-container .gt-avatar img {
@@ -587,4 +590,25 @@ body.dark footer.pageFooter svg {
 .conversation-outer-wrapper .gt-container .gt-avatar-github {
   width: 50px;
   height: 50px;
+}
+
+.conversation-outer-wrapper
+  .gt-container
+  .gt-header-controls
+  .gt-btn.gt-btn-public {
+  background-color: #f52aad;
+  color: #000;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin-left: 0.75em !important;
+}
+
+.conversation-outer-wrapper .gt-container .gt-btn-public:hover {
+  background-color: #f52aad;
+}
+
+.conversation-outer-wrapper .gt-container .gt-btn-public:focus {
+  box-shadow: 0px 0px 0px 2px #f52aad;
 }
