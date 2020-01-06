@@ -237,3 +237,7 @@ body.dark .dependencies {
 body.dark .dependencies .dep {
   background: #1d1d1d;
 }
+
+body.dark footer svg {
+  fill: #e2d8d8;
+}
