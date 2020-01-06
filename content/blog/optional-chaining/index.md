@@ -2,7 +2,7 @@
 title: Optional Chaining Tips
 date: '2020-01-05T00:27:09.819Z'
 description: 'A quick reference guide for Optional Chaining.'
-tags: ['esnext', 'optional-chaining']
+tags: ['beginner', 'esnext', 'optional-chaining']
 ---
 
 ## Syntax

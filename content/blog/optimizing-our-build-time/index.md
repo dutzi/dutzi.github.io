@@ -2,7 +2,7 @@
 title: Things I've Learnt Optimizing Our Build Time
 date: '2020-01-05T18:24:12.637Z'
 description: "I'll walk through some of build time optimization techniques we used for our products here at the company I work at."
-tags: ['array', 'findIndex']
+tags: ['webpack', 'optimization', 'build']
 ---
 
 Where I work at (a small-medium startup called [Spot.IM](https://www.spot.im/)) we use Webpack to bundle our products. After about 4 years and who knows how many hands contributing to the source code, our main product's build time reached a staggering **90 seconds** for initial build and **14 seconds** for re-build.
@@ -36,7 +36,7 @@ module.exports = smp.wrap(webpackConfig)
 
 We wrap the Webpack config file with SMP (which we enable through an environment variable), later we pass that config object to Webpack, which will then print a nice report specifying each loader's processing time per each build. This way we win in two frontiers, one is that we get immediate feedback to our optimization attempts and the other is that we instantly get a full report of how long each loader (or actually "chain of loaders") took:
 
-<div class="imageWrapper" style="width: 467px">
+<div class="imageWrapper" style="max-width: 467px">
 
 ![SMP Report](./smp-report@2x.png)
 
@@ -101,7 +101,7 @@ There are 12 different variants, Create React App [uses `cheap-module-source-map
 
 What you lose here is the quality of the source maps generated, and you feel the degradation once you start debugging the code. Luckily, browsers right now are keeping up the pace with TC39, so (at least while developing) you don't really need to transpile a lot of your code. If you set Babel up so that it will transpile Javascript to the latest browser version (as [CRA does](https://github.com/facebook/create-react-app/blob/7ac8150af37d4f5617f4218619a2b607f2e20d56/packages/react-scripts/package.json#L98-L102)) you should be fine, as the source maps won't be too far off from the code itself.
 
-Here's how your `babel.config.js` should look like should you want to transpile to the latest browser versions:
+Here's how your `babel.config.js` should look like should you choose to transpile to the latest browser versions:
 
 ```ts
 module.exports = {
