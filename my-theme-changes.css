@@ -128,11 +128,11 @@ pre::-webkit-scrollbar-thumb {
   }
 }
 
-footer {
+footer.pageFooter {
   text-align: center;
 }
 
-footer a {
+footer.pageFooter a {
   box-shadow: none;
 }
 
@@ -238,6 +238,6 @@ body.dark .dependencies .dep {
   background: #1d1d1d;
 }
 
-body.dark footer svg {
+body.dark footer.pageFooter svg {
   fill: #e2d8d8;
 }
