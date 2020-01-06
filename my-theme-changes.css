@@ -164,16 +164,17 @@ footer.pageFooter a {
   left: 0px;
   right: 0px;
   margin-bottom: -100px;
-  background: #3a2a53;
+  background: #1c1527;
   /* transform: rotate(1deg); */
-  border-top: 5px solid #b2257d;
-  box-shadow: 0px 15px 43px #00000094 inset;
+  border-top: 15px solid #3a2b54;
+  box-shadow: 0px 15px 43px #00000094 inset, 0px 0px 0px 1px #ffffff1f;
 }
 
 .github-conversation-wrapper {
   max-width: 42rem;
   padding: 2.625rem 1.3125rem;
   margin: auto;
+  min-height: 200px;
   /* transform: rotate(-1deg); */
 }
 
@@ -203,7 +204,7 @@ footer.pageFooter a {
   .comment-body
   blockquote {
   color: hsla(0, 0%, 100%, 0.59);
-  border-left-color: (0, 0%, 86%, 0.9);
+  border-left-color: hsla(0, 0%, 86%, 0.9);
 }
 
 .github-conversation-wrapper .github-conversation-comment .comment-user-name {
@@ -319,12 +320,12 @@ body.dark footer.pageFooter svg {
   fill: #e2d8d8;
 }
 
-body.dark
+/* body.dark
   .github-conversation-wrapper
   .github-conversation-comment
   .comment-body {
   background: #4a4a4a;
-}
+} */
 
 /* Github Conversation */
 
