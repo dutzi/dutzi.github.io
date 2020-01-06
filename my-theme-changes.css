@@ -128,6 +128,14 @@ pre::-webkit-scrollbar-thumb {
   }
 }
 
+footer {
+  text-align: center;
+}
+
+footer a {
+  box-shadow: none;
+}
+
 /* Dark Mode */
 
 .darkModeButtonWrapper {
