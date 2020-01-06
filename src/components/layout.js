@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 
 import { rhythm, scale } from '../utils/typography'
 import DarkMode from './dark-mode'
+import GithubLink from './github-link'
 
 class Layout extends React.Component {
   render() {
@@ -64,6 +65,9 @@ class Layout extends React.Component {
         <DarkMode />
         <header>{header}</header>
         <main>{children}</main>
+        <footer>
+          <GithubLink />
+        </footer>
       </div>
     )
   }
