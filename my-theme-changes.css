@@ -412,3 +412,30 @@ body.dark footer.pageFooter svg {
   max-width: 42rem;
   margin: auto;
 }
+
+.utterances {
+  max-width: 42rem;
+  /* position: absolute;
+  left: 0px;
+  right: 0px;
+  max-width: initial;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  margin-bottom: -100px;
+  background: #1c1527;
+  border-top: 15px solid #3a2b54;
+  box-shadow: 0px 15px 43px #00000094 inset, 0px 0px 0px 1px #ffffff1f; */
+}
+
+/*.utterances-frame {
+  max-width: 500px;
+  position: static;
+  left: initial;
+  right: initial;
+  min-width: initial;
+  height: 240px;
+  width: 100%;
+  margin: auto;
+  display: block;
+} */
