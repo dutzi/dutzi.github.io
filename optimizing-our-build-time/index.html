@@ -92,7 +92,7 @@
 <span class="token punctuation">}</span></code></pre></div>
 <p>There are 12 different variants, Create React App <a href="https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/config/webpack.config.js#L153-L157">uses <code class="language-text">cheap-module-source-map</code></a>, so play with it and see what’s good for your needs.</p>
 <p>What you lose here is the quality of the source maps generated, and you feel the degradation once you start debugging the code. Luckily, browsers right now are keeping up the pace with TC39, so (at least while developing) you don’t really need to transpile a lot of your code. If you set Babel up so that it will transpile Javascript to the latest browser version (as <a href="https://github.com/facebook/create-react-app/blob/7ac8150af37d4f5617f4218619a2b607f2e20d56/packages/react-scripts/package.json#L98-L102">CRA does</a>) you should be fine, as the source maps won’t be too far off from the code itself.</p>
-<p>Here’s how your <code class="language-text">babel.config.js</code> should look like should you want to transpile to the latest browser versions:</p>
+<p>Here’s how your <code class="language-text">babel.config.js</code> should look like should you choose to transpile to the latest browser versions:</p>
 <div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">module</span><span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
   presets<span class="token punctuation">:</span> <span class="token punctuation">[</span>
     <span class="token punctuation">[</span>
@@ -124,7 +124,7 @@
 /static/eedc8eadb8d55ef41c9519a65b474243/bc2a0/profile-pic.png 1.5x,
 /static/eedc8eadb8d55ef41c9519a65b474243/89cf4/profile-pic.png 2x" /><img loading="lazy" width="50" height="50" srcset="/static/eedc8eadb8d55ef41c9519a65b474243/000d3/profile-pic.png 1x,
 /static/eedc8eadb8d55ef41c9519a65b474243/bc2a0/profile-pic.png 1.5x,
-/static/eedc8eadb8d55ef41c9519a65b474243/89cf4/profile-pic.png 2x" src="/static/eedc8eadb8d55ef41c9519a65b474243/000d3/profile-pic.png" alt="dutzi" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><p style="margin:0">Thanks for reading!<br/>— <strong>dutzi</strong></p></div></footer></article><nav><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/optional-chaining/">← <!-- -->Optional Chaining Tips</a></li><li></li></ul></nav></main></div></div></div><script>
+/static/eedc8eadb8d55ef41c9519a65b474243/89cf4/profile-pic.png 2x" src="/static/eedc8eadb8d55ef41c9519a65b474243/000d3/profile-pic.png" alt="dutzi" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><p style="margin:0">Thanks for reading!<br/>— <strong>dutzi</strong></p></div></footer></article><nav><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/optional-chaining/">← <!-- -->Optional Chaining Tips</a></li><li><a rel="next" href="/css-in-js-vs-scss/">Thoughts On CSS-in-JS<!-- --> →</a></li></ul></nav></main></div></div></div><script>
   
   
   if(true) {
