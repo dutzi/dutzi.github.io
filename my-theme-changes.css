@@ -129,6 +129,11 @@ pre::-webkit-scrollbar-thumb {
   height: 6px;
 }
 
+.github-conversation-wrapper .link {
+  margin-bottom: 2em;
+  display: inline-block;
+}
+
 /* Mobile */
 
 @media (max-width: 576px) {
@@ -253,4 +258,58 @@ body.dark .dependencies .dep {
 
 body.dark footer.pageFooter svg {
   fill: #e2d8d8;
+}
+
+body.dark
+  .github-conversation-wrapper
+  .github-conversation-comment
+  .comment-body {
+  background: #4a4a4a;
+}
+
+/* Github Conversation */
+
+.github-conversation-wrapper .github-conversation-comment {
+  margin-bottom: 2em;
+  display: flex;
+}
+
+.github-conversation-wrapper .github-conversation-comment .comment-and-name {
+  display: flex;
+  flex-direction: column;
+  margin-right: 12px;
+  flex: 1;
+}
+
+.github-conversation-wrapper .github-conversation-comment .comment-user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  margin-right: 1em;
+}
+
+.github-conversation-wrapper .github-conversation-comment .comment-user-name {
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+
+.github-conversation-wrapper .github-conversation-comment .comment-body {
+  background: #f7f7f7;
+  padding: 12px;
+  border-radius: 6px;
+  flex: 1;
+}
+
+.github-conversation-wrapper
+  .github-conversation-comment
+  .comment-body
+  blockquote {
+  margin-left: 0px;
+}
+
+.github-conversation-wrapper
+  .github-conversation-comment
+  .comment-body
+  *:last-child {
+  margin-bottom: 0px;
 }
