@@ -5,19 +5,19 @@ description: 'Some pretty useful, pretty generic, typed hooks I made for a recen
 tags: ['react', 'hooks']
 ---
 
-Ordered by alphabetical order.
+Some React hooks I recently wrote for a project (ordered alphabetically).
 
 ## Use Animate Height
 
-`useAnimateHeight` will use the [Resize Observer API](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver) to listen to resize change within a reffed component, it will then animate its wrapper's height to adapt for the new height.
+`useAnimateHeight` will use the [Resize Observer API](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver) to listen to resize changes within a reffed component, it will then animate its wrapper's height to adapt to the new height.
 
 <!-- prettier-ignore -->
 ```tsx
-const [commentsWrapper, commentsList] = useAnimateHeight()
+const [wrapper, element] = useAnimateHeight()
 
 return (
-  <div ref={commentsWrapper}>
-    <div ref={commentsList}>
+  <div ref={wrapper}>
+    <div ref={element}>
       {/* ... */}
     </div>
   </div>
@@ -31,6 +31,10 @@ return (
 `useEscapeToClose` will listen to escape key presses and call a function once it happens.
 
 ```tsx
+function handleClose() {
+  // closed!
+}
+
 useEscapeToClose(handleClose)
 ```
 
@@ -66,15 +70,15 @@ const isMobile = useIsMobile()
 
 ## Use Keyboard Shortcut
 
-`useKeyboardShortcut` accepts a hash, where the keys are single characters and the values are methods that will be called when the user presses the ctrl key + the character for the method.
+`useKeyboardShortcut` accepts an object, where the keys are single characters and the values are methods that should be called when the user presses the ctrl key + the character for the method.
 
 ```tsx
 function showCommandPalette() {
-  // ...
+  // called when user presses ctrl+p
 }
 
 useKeyboardShortcut({
-  k: showCommandPalette,
+  p: showCommandPalette,
 })
 ```
 
@@ -82,7 +86,7 @@ useKeyboardShortcut({
 
 ## Use Maintain Ratio
 
-`useMaintainRatio` accepts a number (**the ratio**) and options (active: boolean; change: 'height' | 'width') and returns a ref. The component attached to that ref will maintain that aspect ratio by changing its width or height.
+`useMaintainRatio` accepts a number (**the ratio**) and options (active: boolean; change: 'width' | 'height') and returns a ref. The component attached to that ref will maintain that aspect ratio by changing its width or height.
 
 <!-- prettier-ignore -->
 ```tsx
@@ -141,3 +145,5 @@ useScrollToTop()
 ```
 
 [Github](https://github.com/dutzi/feedfarm/blob/master/src/hooks/use-scroll-to-top.ts)
+
+And that's it for now.
