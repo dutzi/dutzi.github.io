@@ -702,3 +702,7 @@ body.dark div.pageFooter svg {
 .conversation-outer-wrapper .markdown-body h2 {
   border-bottom-color: #44193f;
 }
+
+.conversation-outer-wrapper .gt-container .gt-comment-content:hover {
+  box-shadow: none;
+}
