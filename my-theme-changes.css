@@ -454,6 +454,7 @@ body.dark footer.pageFooter svg {
   background: linear-gradient(#130d1b 80%, #271a38);
   border-radius: 10px;
   border-bottom: 2px solid #f52aad;
+  box-shadow: 0px 0px 3px -1px #f42aad;
 }
 
 .conversation-outer-wrapper .gt-container .gt-comment-body {
@@ -478,7 +479,7 @@ body.dark footer.pageFooter svg {
   border: none;
   display: flex;
   justify-content: flex-start;
-  margin: 0px 0px 0.5em;
+  margin: 0px 0px 0.75em;
   padding: 0px;
   margin-left: 0px;
   font-family: Montserrat, sans-serif;
@@ -548,6 +549,7 @@ body.dark footer.pageFooter svg {
 .conversation-outer-wrapper .gt-container .gt-header-textarea:focus {
   box-shadow: 0px 0px 22px 0px #f52aad, 0px 0px 0px 2px #f52aad,
     0px 0px 0px 0px inset #f52aad;
+  /* transform: scale(1.01); */
 }
 
 .conversation-outer-wrapper .gt-container .gt-header-controls {
@@ -569,8 +571,8 @@ body.dark footer.pageFooter svg {
   box-shadow: 0px 0px 0px 2px #f52aad;
 }
 
-.conversation-outer-wrapper .gt-container .gt-btn-login {
-  background-color: #f52aad;
+.conversation-outer-wrapper .gt-container .gt-btn {
+  background: linear-gradient(#f52aad, #9c27b0);
   color: black;
   border: none;
   font-family: inherit;
@@ -579,7 +581,7 @@ body.dark footer.pageFooter svg {
   margin-left: 0.75em !important;
 }
 
-.conversation-outer-wrapper .gt-container .gt-btn-login:focus {
+.conversation-outer-wrapper .gt-container .gt-btn:focus {
   box-shadow: 0px 0px 0px 2px #f52aad;
 }
 
@@ -611,4 +613,43 @@ body.dark footer.pageFooter svg {
 
 .conversation-outer-wrapper .gt-container .gt-btn-public:focus {
   box-shadow: 0px 0px 0px 2px #f52aad;
+}
+
+.conversation-outer-wrapper .gt-container a {
+  color: #f92aad;
+}
+
+.conversation-outer-wrapper .gt-container .gt-error {
+  text-align: center;
+  margin: 1.425em 0px;
+  padding: 4px;
+  color: #ff3860;
+  background: linear-gradient(#f44336, #e91e63);
+  color: #1d1526;
+  border: 1px solid #312e30;
+}
+
+.conversation-outer-wrapper p.gt-comments-null {
+  width: 0px;
+  overflow: hidden;
+  margin: auto;
+  font-size: 0px;
+  height: 120px;
+  margin-top: 50px;
+}
+
+.conversation-outer-wrapper p.gt-comments-null:before {
+  content: 'Leave a comment to start the conversation 🚀';
+  position: absolute;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  font-size: 16px;
+  text-shadow: 0px 0px 10px #f42aad;
+  background: linear-gradient(#080808, #191919);
+  padding: 10px 20px;
+  border-radius: 100px;
+  box-shadow: 0px 1px #591942, 0px 1px 10px -1px #591942;
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  text-rendering: optimizeLegibility;
 }
