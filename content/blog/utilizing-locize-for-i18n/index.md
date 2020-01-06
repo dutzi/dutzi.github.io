@@ -59,7 +59,7 @@ I18next is a standard which is adopted by a few translation services, where I wo
 
 The way it works is as follows.
 
-We have two scripts defined in our `package.json`, one that syncs our main language's JSON with what's in Locize and one that downloads the other language's translation files, after being translated.
+We have two scripts defined in our `package.json`, one that syncs our main language's JSON with whatever is in Locize and one that downloads the other language's translation files, after they were translated.
 
 ```json
 "upload-translations": "locize sync --project-id LOCIZE_PROJECT_ID --path src/translations",
