@@ -154,6 +154,65 @@ footer.pageFooter a {
   box-shadow: none;
 }
 
+.github-conversation-wrapper .github-conversation-comment-editor textarea {
+  outline: none;
+  box-shadow: 0px 0px 0px 2px #f92aad, 0px 0px 40px #0000008c;
+}
+
+.conversation-outer-wrapper {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  margin-bottom: -100px;
+  background: #3a2a53;
+  /* transform: rotate(1deg); */
+  border-top: 5px solid #b2257d;
+  box-shadow: 0px 15px 43px #00000094 inset;
+}
+
+.github-conversation-wrapper {
+  max-width: 42rem;
+  padding: 2.625rem 1.3125rem;
+  margin: auto;
+  /* transform: rotate(-1deg); */
+}
+
+.conversation-outer-wrapper
+  .github-conversation-wrapper
+  .github-conversation-comment-editor
+  textarea {
+  background: rgb(49, 35, 70);
+  color: white;
+}
+
+.conversation-outer-wrapper
+  .github-conversation-wrapper
+  .github-conversation-comment
+  .comment-body {
+  background: #322448;
+  padding: 12px;
+  border-radius: 6px;
+  flex: 1 1;
+  border: 1px solid #00000029;
+  color: #d0d0d0;
+  box-shadow: 0px 0px 30px -10px #00000054 inset;
+}
+
+.github-conversation-wrapper
+  .github-conversation-comment
+  .comment-body
+  blockquote {
+  color: hsla(0, 0%, 100%, 0.59);
+  border-left-color: (0, 0%, 86%, 0.9);
+}
+
+.github-conversation-wrapper .github-conversation-comment .comment-user-name {
+  color: white;
+}
+
+.conversation-outer-wrapper .github-conversation-wrapper hr {
+  display: none;
+}
 /* Dark Mode */
 
 .darkModeButtonWrapper {
@@ -269,6 +328,39 @@ body.dark
 
 /* Github Conversation */
 
+.github-conversation-wrapper .github-conversation-comment-editor {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.github-conversation-wrapper .github-conversation-comment-editor textarea {
+  margin-left: calc(50px + 1em);
+  width: calc((100% - 50px) - 1em);
+  padding: 9px 12px;
+  border: none;
+  background: rgb(202, 202, 202);
+  border-radius: 6px;
+  resize: vertical;
+  margin-top: 0px;
+  margin-bottom: 1em;
+  height: 101px;
+}
+
+.github-conversation-wrapper
+  .github-conversation-comment-editor
+  .submit-button {
+  background: #f92aad;
+  color: white;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 25px;
+  cursor: pointer;
+}
+
 .github-conversation-wrapper .github-conversation-comment {
   margin-bottom: 2em;
   display: flex;
@@ -277,7 +369,6 @@ body.dark
 .github-conversation-wrapper .github-conversation-comment .comment-and-name {
   display: flex;
   flex-direction: column;
-  margin-right: 12px;
   flex: 1;
 }
 
