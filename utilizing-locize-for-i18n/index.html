@@ -32,7 +32,7 @@
 <h2>Sending To Translators</h2>
 <p>I18next is a standard which is adopted by a few translation services, where I work at we chose to go with <a href="https://locize.com/">Locize</a> that has <a href="https://www.onehourtranslation.com/">One Hour Translation</a> (<strong>OHT</strong>) integration which makes translating a breeze.</p>
 <p>The way it works is as follows.</p>
-<p>We have two scripts defined in our <code class="language-text">package.json</code>, one that syncs our main language’s JSON with what’s in Locize and one that downloads the other language’s translation files, after being translated.</p>
+<p>We have two scripts defined in our <code class="language-text">package.json</code>, one that syncs our main language’s JSON with whatever is in Locize and one that downloads the other language’s translation files, after they were translated.</p>
 <div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token property">"upload-translations"</span><span class="token operator">:</span> <span class="token string">"locize sync --project-id LOCIZE_PROJECT_ID --path src/translations"</span><span class="token punctuation">,</span>
 <span class="token property">"download-translations"</span><span class="token operator">:</span> <span class="token string">"locize download --project-id LOCIZE_PROJECT_ID --path src/translations"</span><span class="token punctuation">,</span></code></pre></div>
 <p>Whenever we introduce new strings to our app, we run <code class="language-text">upload-translations</code>, then within Locize’s console we get a quote from OHT, approve it, wait 24 hours and run <code class="language-text">download-translations</code>. Simple, right?</p>
