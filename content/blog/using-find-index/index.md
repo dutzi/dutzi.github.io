@@ -2,7 +2,7 @@
 title: Things You Should Know About Array.findIndex
 date: '2020-01-04T08:51:12.960Z'
 description: 'A short and simple overview of Array.findIndex.'
-tags: ['beginner', 'array', 'findIndex']
+tags: ['🐥 beginner', 'array', 'findIndex']
 ---
 
 **Array.prototype.findIndex** according to [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex) is:
