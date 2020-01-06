@@ -405,3 +405,10 @@ body.dark footer.pageFooter svg {
   *:last-child {
   margin-bottom: 0px;
 }
+
+/* Gitment Conversation */
+
+.gitment-container.gitment-root-container {
+  max-width: 42rem;
+  margin: auto;
+}
