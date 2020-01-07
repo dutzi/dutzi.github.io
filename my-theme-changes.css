@@ -713,7 +713,10 @@ body.dark div.pageFooter svg {
   border-radius: 10px;
 }
 
-.conversation-outer-wrapper .gt-container .gt-header-controls .gt-btn:before {
+.conversation-outer-wrapper
+  .gt-container
+  .gt-header-controls
+  .gt-btn.gt-btn-login:before {
   content: 'Signup with Github';
 }
 
