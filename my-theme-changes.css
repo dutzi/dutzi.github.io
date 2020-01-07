@@ -1,5 +1,5 @@
 html {
-  background: #191223;
+  background: #1c1527;
 }
 
 body {
@@ -173,7 +173,8 @@ div.pageFooter a {
   left: 0px;
   right: 0px;
   margin-bottom: -100px;
-  background: #1c1527;
+  background-color: white;
+  color: #ffffff;
   /* transform: rotate(1deg); */
   /* border-top: 15px solid #3a2b54; */
 }
@@ -542,13 +543,13 @@ body.dark div.pageFooter svg {
 .conversation-outer-wrapper .gt-container .gt-header-textarea:hover {
   min-height: 126px;
   line-height: 1.8em;
-  background-color: #130c1b;
-  color: white;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 0px 2px #673ab7;
+  color: black;
 }
 
 .conversation-outer-wrapper .gt-container .gt-header-textarea:focus {
   box-shadow: 0px 0px 0px 2px #f52aad;
-  /* transform: scale(1.01); */
 }
 
 .conversation-outer-wrapper .gt-container .gt-header-controls {
@@ -571,8 +572,8 @@ body.dark div.pageFooter svg {
 }
 
 .conversation-outer-wrapper .gt-container .gt-btn {
-  background: linear-gradient(#f52aad, #9c27b0);
-  color: black;
+  background: #f529ac;
+  color: white;
   border: none;
   font-family: inherit;
   font-size: inherit;
@@ -646,18 +647,18 @@ body.dark div.pageFooter svg {
 }
 
 .conversation-outer-wrapper p.gt-comments-null:before {
-  content: 'Leave a comment to start the conversation 🚀';
+  content: 'Leave a comment and start the conversation 🚀';
   position: absolute;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   font-size: 16px;
-  text-shadow: 0px 0px 10px #f42aad;
-  background: linear-gradient(#080808, #191919);
+  /* text-shadow: 0px 0px 10px #f42aad; */
+  background-color: #6739b7;
   padding: 10px 20px;
   border-radius: 100px;
-  box-shadow: 0px 1px #591942, 0px 1px 10px -1px #591942;
+  /* box-shadow: 0px 1px #591942, 0px 1px 10px -1px #591942; */
   font-family: Montserrat, sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   text-rendering: optimizeLegibility;
 }
 
@@ -687,7 +688,7 @@ body.dark div.pageFooter svg {
 
 .conversation-outer-wrapper .gt-container .gt-counts {
   font-size: 0.5em;
-  color: white;
+  color: #000000;
   font-weight: normal;
 }
 
@@ -709,4 +710,42 @@ body.dark div.pageFooter svg {
 
 .conversation-outer-wrapper .gt-container .gt-comment-content:hover {
   box-shadow: none;
+}
+
+.conversation-outer-wrapper .gt-container .gt-header-controls .gt-btn:before {
+  content: 'Signup with Github';
+}
+
+.conversation-outer-wrapper .gt-container .gt-btn-text {
+  display: none;
+}
+
+/* Conversation Dark Mode */
+
+body.dark .conversation-outer-wrapper {
+  background: #1c1527;
+}
+
+body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea,
+body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea:hover {
+  background-color: #130c1b;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea:focus {
+  box-shadow: 0px 0px 0px 2px #f52aad;
+}
+
+body.dark .conversation-outer-wrapper .gt-container .gt-btn {
+  background: linear-gradient(#f52aad, #9c27b0);
+  color: black;
+}
+
+body.dark .conversation-outer-wrapper p.gt-comments-null:before {
+  background: #130b1a;
+}
+
+body.dark .conversation-outer-wrapper .gt-container .gt-counts {
+  color: #ffffff;
 }
