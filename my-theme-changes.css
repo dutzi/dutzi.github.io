@@ -603,7 +603,7 @@ body.dark div.pageFooter svg {
   .gt-header-controls
   .gt-btn.gt-btn-public {
   background-color: #f52aad;
-  color: #000;
+  color: #ffffff;
   border: none;
   font-family: inherit;
   font-size: inherit;
@@ -635,10 +635,9 @@ body.dark div.pageFooter svg {
   text-align: center;
   margin: 1.425em 0px;
   padding: 4px;
-  color: #ff3860;
-  background: linear-gradient(#f44336, #e91e63);
-  color: #1d1526;
-  border: 1px solid #312e30;
+  border: 3px solid #f529ac;
+  background: #f529ac;
+  color: white;
 }
 
 .conversation-outer-wrapper p.gt-comments-null {
