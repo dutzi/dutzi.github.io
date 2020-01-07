@@ -720,7 +720,7 @@ body.dark div.pageFooter svg {
   content: 'Signup with Github';
 }
 
-.conversation-outer-wrapper .gt-container .gt-btn-text {
+.conversation-outer-wrapper .gt-container .gt-btn.gt-btn-public .gt-btn-text {
   display: none;
 }
 
