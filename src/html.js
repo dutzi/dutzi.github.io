@@ -17,6 +17,9 @@ export default function HTML(props) {
         <script
           dangerouslySetInnerHTML={{
             __html: `
+              if (window.location.host === 'dutzi.github.io') {
+                window.location.replace('https://dutzi.party' + window.location.pathname);
+              }
               if (window.localStorage.getItem('dark')) {
                 document.body.classList.add('dark')
               }

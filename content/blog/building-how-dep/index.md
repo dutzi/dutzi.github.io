@@ -31,7 +31,7 @@ You can play with it [here](https://tsquery-playground.firebaseapp.com/), it's p
 
 Using TS Query I was able to easily find all import statements and generate a report accordingly.
 
-## Rendering An HTML File From The CLI
+## Rendering an HTML File From the CLI
 
 <!-- ### Utilizing React's SSR abilities to generate simple HTML file -->
 
@@ -39,7 +39,7 @@ Rendering a report _to_ the CLI is easy, simply log whatever you want and use [c
 
 After creating a simple React based report (**[the app](https://github.com/dutzi/how-dep/blob/master/src/web/App.tsx)**), I needed a way to dump it out into an HTML file and present it to the user. `renderToString` was a simple way to do it.
 
-`ReactDOMServer.renderToString` will take a React Element, and spit out the HTML that renders that node.
+`ReactDOMServer.renderToString` will take a React Element, and spit out the HTML that renders it.
 
 Dump its output to a temporary file, give it a name, and you have a static page that renders your app:
 

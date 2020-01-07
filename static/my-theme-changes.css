@@ -1,3 +1,11 @@
+html {
+  background: #1c1527;
+}
+
+body {
+  background: #ffffff;
+}
+
 a {
   color: #f92aad;
 }
@@ -129,6 +137,11 @@ pre::-webkit-scrollbar-thumb {
   height: 6px;
 }
 
+.github-conversation-wrapper .link {
+  margin-bottom: 2em;
+  display: inline-block;
+}
+
 /* Mobile */
 
 @media (max-width: 576px) {
@@ -141,14 +154,75 @@ pre::-webkit-scrollbar-thumb {
   }
 }
 
-footer.pageFooter {
+div.pageFooter {
   text-align: center;
+  margin-bottom: 2em;
 }
 
-footer.pageFooter a {
+div.pageFooter a {
   box-shadow: none;
 }
 
+.github-conversation-wrapper .github-conversation-comment-editor textarea {
+  outline: none;
+  box-shadow: 0px 0px 0px 2px #f92aad, 0px 0px 40px #0000008c;
+}
+
+.conversation-outer-wrapper {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  margin-bottom: -100px;
+  background-color: white;
+  color: #ffffff;
+  /* transform: rotate(1deg); */
+  /* border-top: 15px solid #3a2b54; */
+}
+
+.github-conversation-wrapper {
+  max-width: 42rem;
+  padding: 2.625rem 1.3125rem;
+  margin: auto;
+  min-height: 200px;
+  /* transform: rotate(-1deg); */
+}
+
+.conversation-outer-wrapper
+  .github-conversation-wrapper
+  .github-conversation-comment-editor
+  textarea {
+  background: rgb(49, 35, 70);
+  color: white;
+}
+
+.conversation-outer-wrapper
+  .github-conversation-wrapper
+  .github-conversation-comment
+  .comment-body {
+  background: #322448;
+  padding: 12px;
+  border-radius: 6px;
+  flex: 1 1;
+  border: 1px solid #00000029;
+  color: #d0d0d0;
+  box-shadow: 0px 0px 30px -10px #00000054 inset;
+}
+
+.github-conversation-wrapper
+  .github-conversation-comment
+  .comment-body
+  blockquote {
+  color: hsla(0, 0%, 100%, 0.59);
+  border-left-color: hsla(0, 0%, 86%, 0.9);
+}
+
+.github-conversation-wrapper .github-conversation-comment .comment-user-name {
+  color: white;
+}
+
+.conversation-outer-wrapper .github-conversation-wrapper hr {
+  display: none;
+}
 /* Dark Mode */
 
 .darkModeButtonWrapper {
@@ -251,6 +325,459 @@ body.dark .dependencies .dep {
   background: #1d1d1d;
 }
 
-body.dark footer.pageFooter svg {
+body.dark div.pageFooter svg {
   fill: #e2d8d8;
+}
+
+/* body.dark
+  .github-conversation-wrapper
+  .github-conversation-comment
+  .comment-body {
+  background: #4a4a4a;
+} */
+
+/* Github Conversation */
+
+.github-conversation-wrapper .github-conversation-comment-editor {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.github-conversation-wrapper .github-conversation-comment-editor textarea {
+  margin-left: calc(50px + 1em);
+  width: calc((100% - 50px) - 1em);
+  padding: 9px 12px;
+  border: none;
+  background: rgb(202, 202, 202);
+  border-radius: 6px;
+  resize: vertical;
+  margin-top: 0px;
+  margin-bottom: 1em;
+  height: 101px;
+}
+
+.github-conversation-wrapper
+  .github-conversation-comment-editor
+  .submit-button {
+  background: #f92aad;
+  color: white;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 25px;
+  cursor: pointer;
+}
+
+.github-conversation-wrapper .github-conversation-comment {
+  margin-bottom: 2em;
+  display: flex;
+}
+
+.github-conversation-wrapper .github-conversation-comment .comment-and-name {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.github-conversation-wrapper .github-conversation-comment .comment-user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  margin-right: 1em;
+}
+
+.github-conversation-wrapper .github-conversation-comment .comment-user-name {
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+
+.github-conversation-wrapper .github-conversation-comment .comment-body {
+  background: #f7f7f7;
+  padding: 12px;
+  border-radius: 6px;
+  flex: 1;
+}
+
+.github-conversation-wrapper
+  .github-conversation-comment
+  .comment-body
+  blockquote {
+  margin-left: 0px;
+}
+
+.github-conversation-wrapper
+  .github-conversation-comment
+  .comment-body
+  *:last-child {
+  margin-bottom: 0px;
+}
+
+/* Gitment Conversation */
+
+.gitment-container.gitment-root-container {
+  max-width: 42rem;
+  margin: auto;
+}
+
+.utterances {
+  max-width: 42rem;
+  /* position: absolute;
+  left: 0px;
+  right: 0px;
+  max-width: initial;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  margin-bottom: -100px;
+  background: #1c1527;
+  border-top: 15px solid #3a2b54;
+  box-shadow: 0px 15px 43px #00000094 inset, 0px 0px 0px 1px #ffffff1f; */
+}
+
+/*.utterances-frame {
+  max-width: 500px;
+  position: static;
+  left: initial;
+  right: initial;
+  min-width: initial;
+  height: 240px;
+  width: 100%;
+  margin: auto;
+  display: block;
+} */
+
+.gt-container {
+  max-width: 42rem;
+  padding: 1.625rem 1.3125rem;
+  margin: auto;
+}
+
+.conversation-outer-wrapper
+  .gt-container
+  .gt-comment-admin
+  .gt-comment-content {
+  /* background-color: #130d1b; */
+  background: #130d1b;
+  border-radius: 10px;
+}
+
+.conversation-outer-wrapper .gt-container .gt-comment-body {
+  color: #000000 !important;
+  line-height: 1.8em;
+}
+
+.conversation-outer-wrapper .markdown-body {
+  font-family: inherit !important;
+}
+
+.conversation-outer-wrapper .gt-container .gt-link {
+  border-bottom: none;
+  color: inherit;
+}
+
+.conversation-outer-wrapper .gt-container .gt-meta {
+  border: none;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0px 0px 0.75em;
+  padding: 0px;
+  margin-left: 0px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 900;
+  text-rendering: optimizeLegibility;
+  font-size: 2.1rem;
+  line-height: 1.1;
+  color: white;
+}
+
+.conversation-outer-wrapper .gt-container .gt-user {
+  font-size: 1em;
+  display: none;
+}
+
+.conversation-outer-wrapper .gt-container a {
+  color: #f92aad;
+  box-shadow: none;
+}
+.conversation-outer-wrapper .gt-container a:hover {
+  color: #f92aad;
+  box-shadow: none;
+}
+
+.gt-header-controls-tip {
+  display: none;
+}
+
+.conversation-outer-wrapper .gt-container .gt-comment-reply {
+  display: none;
+}
+
+.conversation-outer-wrapper .gt-container .gt-ico.gt-ico-reply {
+  display: none;
+}
+
+.conversation-outer-wrapper .gt-meta {
+  color: #e0d3d3;
+}
+
+.conversation-outer-wrapper .gt-container .gt-svg svg {
+  fill: #f92aad;
+}
+
+.conversation-outer-wrapper .markdown-body .highlight pre,
+.conversation-outer-wrapper .markdown-body pre {
+  background: #1d1526;
+  box-shadow: 0px 10px 30px -14px black inset;
+  border: 1px solid #351b3e;
+  border-radius: 8px;
+}
+
+.conversation-outer-wrapper .gt-container .gt-avatar img {
+  border-radius: 100%;
+}
+
+.conversation-outer-wrapper .gt-container .gt-comment-text {
+  display: none;
+}
+
+.conversation-outer-wrapper .gt-container .gt-header-textarea,
+.conversation-outer-wrapper .gt-container .gt-header-textarea:hover {
+  min-height: 126px;
+  line-height: 1.8em;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 0px 2px #673ab7;
+  color: black;
+}
+
+.conversation-outer-wrapper .gt-container .gt-header-textarea:focus {
+  box-shadow: 0px 0px 0px 2px #f52aad;
+}
+
+.conversation-outer-wrapper .gt-container .gt-header-controls {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.conversation-outer-wrapper .gt-container .gt-btn-preview {
+  background-color: white;
+  color: black;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  display: none;
+}
+
+.conversation-outer-wrapper .gt-container .gt-btn-preview:focus {
+  box-shadow: 0px 0px 0px 2px #f52aad;
+}
+
+.conversation-outer-wrapper .gt-container .gt-btn {
+  background: #f529ac;
+  color: white;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin-left: 0.75em !important;
+}
+
+.conversation-outer-wrapper .gt-container .gt-btn:focus {
+  box-shadow: 0px 0px 0px 2px #f52aad;
+}
+
+.conversation-outer-wrapper .gt-container .gt-btn {
+  padding: 0.65em 0.75em;
+}
+
+.conversation-outer-wrapper .gt-container .gt-avatar-github {
+  width: 50px;
+  height: 50px;
+}
+
+.conversation-outer-wrapper
+  .gt-container
+  .gt-header-controls
+  .gt-btn.gt-btn-public {
+  background-color: #f52aad;
+  color: #ffffff;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin-left: 0.75em !important;
+}
+
+.conversation-outer-wrapper
+  .gt-container
+  .gt-header-controls
+  .gt-btn.gt-btn-public
+  .gt-btn-public:hover {
+  background-color: #f52aad;
+}
+
+.conversation-outer-wrapper
+  .gt-container
+  .gt-header-controls
+  .gt-btn.gt-btn-public
+  .gt-btn-public:focus {
+  box-shadow: 0px 0px 0px 2px #f52aad;
+}
+
+.conversation-outer-wrapper .gt-container a {
+  color: #f92aad;
+}
+
+.conversation-outer-wrapper .gt-container .gt-error {
+  text-align: center;
+  margin: 1.425em 0px;
+  padding: 4px;
+  border: 3px solid #f529ac;
+  background: #f529ac;
+  color: white;
+}
+
+.conversation-outer-wrapper p.gt-comments-null {
+  width: 0px;
+  overflow: hidden;
+  margin: auto;
+  font-size: 0px;
+  height: 120px;
+  margin-top: 50px;
+}
+
+.conversation-outer-wrapper p.gt-comments-null:before {
+  content: 'Leave a comment and start the conversation 🚀';
+  position: absolute;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  font-size: 16px;
+  /* text-shadow: 0px 0px 10px #f42aad; */
+  background-color: #6739b7;
+  padding: 10px 20px;
+  border-radius: 100px;
+  /* box-shadow: 0px 1px #591942, 0px 1px 10px -1px #591942; */
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+
+.conversation-outer-wrapper .gt-container .gt-comment-date {
+  color: #7d2873;
+}
+
+/* .conversation-outer-wrapper .gt-container .gt-comment-header {
+  background: linear-gradient(transparent, #28122a);
+  border-bottom: 1px solid #44193f;
+  margin: 0px -16px 0.5em;
+  padding: 0px 16px 0.5em;
+} */
+
+.conversation-outer-wrapper
+  .gt-container
+  .gt-comment-admin
+  .gt-comment-content {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.conversation-outer-wrapper .gt-container .gt-comment-header {
+  margin-top: 0.5em;
+  margin-bottom: 0px;
+}
+
+.conversation-outer-wrapper .gt-container .gt-counts {
+  font-size: 0.5em;
+  color: #000000;
+  font-weight: normal;
+}
+
+.conversation-outer-wrapper .gt-counts:before {
+  content: 'Conversation ';
+  font-size: 2em;
+  color: #f52aad;
+  font-weight: 900;
+}
+
+.conversation-outer-wrapper .gt-container .gt-header-controls {
+  margin-top: 1.15em;
+}
+
+.conversation-outer-wrapper .markdown-body h1,
+.conversation-outer-wrapper .markdown-body h2 {
+  border-bottom-color: #44193f;
+}
+
+.conversation-outer-wrapper .gt-container .gt-comment-content:hover {
+  box-shadow: none;
+  border-radius: 10px;
+}
+
+.conversation-outer-wrapper
+  .gt-container
+  .gt-header-controls
+  .gt-btn.gt-btn-login:before {
+  content: 'Signup with Github';
+}
+
+.conversation-outer-wrapper .gt-container .gt-btn.gt-btn-login .gt-btn-text {
+  display: none;
+}
+
+.conversation-outer-wrapper
+  .gt-container
+  .gt-header-controls
+  .gt-btn.gt-btn-public:before {
+  content: 'Submit';
+}
+
+.conversation-outer-wrapper .gt-container .gt-btn.gt-btn-public .gt-btn-text {
+  display: none;
+}
+
+.conversation-outer-wrapper .gt-container .gt-comment-content {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/* Conversation Dark Mode */
+
+body.dark .conversation-outer-wrapper {
+  background: #1c1527;
+}
+
+body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea,
+body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea:hover {
+  border-radius: 10px;
+  background-color: #130c1b;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea:focus {
+  box-shadow: 0px 0px 0px 2px #f52aad;
+}
+
+body.dark .conversation-outer-wrapper .gt-container .gt-btn {
+  background: linear-gradient(#f52aad, #9c27b0);
+  color: black;
+}
+
+body.dark .conversation-outer-wrapper p.gt-comments-null:before {
+  background: #130b1a;
+}
+
+body.dark .conversation-outer-wrapper .gt-container .gt-counts {
+  color: #ffffff;
+}
+
+body.dark .conversation-outer-wrapper .gt-container .gt-comment-body {
+  color: #e0d3d3 !important;
+}
+
+body.dark .conversation-outer-wrapper .gt-container .gt-comment-content {
+  background: #130b1a;
 }

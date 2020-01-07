@@ -65,9 +65,6 @@ class Layout extends React.Component {
         <DarkMode />
         <header>{header}</header>
         <main>{children}</main>
-        <footer className="pageFooter">
-          <GithubLink />
-        </footer>
       </div>
     )
   }

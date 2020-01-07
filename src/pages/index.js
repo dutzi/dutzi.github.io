@@ -5,6 +5,7 @@ import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { rhythm } from '../utils/typography'
+import GithubLink from '../components/github-link'
 
 class BlogIndex extends React.Component {
   render() {
@@ -51,6 +52,9 @@ class BlogIndex extends React.Component {
             </article>
           )
         })}
+        <div className="pageFooter">
+          <GithubLink />
+        </div>
       </Layout>
     )
   }

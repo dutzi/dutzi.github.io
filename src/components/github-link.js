@@ -5,12 +5,11 @@ export default function GithubLink() {
     <div>
       <a href="https://github.com/dutzi">
         <svg
-          class="octicon octicon-mark-github v-align-middle"
           height="32"
           viewBox="0 0 16 16"
           version="1.1"
           width="32"
-          ariaHidden="true"
+          aria-hidden="true"
         >
           <path
             fillRule="evenodd"

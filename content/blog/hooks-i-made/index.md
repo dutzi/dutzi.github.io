@@ -3,6 +3,7 @@ title: Hooks!
 date: '2020-01-06T03:48:48.556Z'
 description: 'Some pretty useful, pretty generic, typed hooks I made for a recent project.'
 tags: ['react', 'hooks']
+issue: 4
 ---
 
 Some React hooks I recently wrote for a project (ordered alphabetically).
@@ -42,7 +43,7 @@ useEscapeToClose(handleClose)
 
 ## Use Focus Trap
 
-`useFocusTrap` traps the keyboard focus within a component (**the main component**). It does so by returning two render functions, those functions should be placed (and called) before the first component and after the last component within the main component.
+`useFocusTrap` traps the keyboard focus within a component (**the main component**). It does so by returning two render functions, these functions should be placed (and called) before the first component and after the last component within the main component.
 
 ```tsx
 const [focusTrapStart, focusTrapEnd] = useFocusTrap()

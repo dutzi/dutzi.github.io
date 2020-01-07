@@ -3,6 +3,7 @@ title: Things I've Learnt Optimizing Our Build Time
 date: '2020-01-05T18:24:12.637Z'
 description: "I'll walk through some of build time optimization techniques we used for our products here at the company I work at."
 tags: ['webpack', 'optimization', 'build']
+issue: 5
 ---
 
 Where I work at (a small-medium startup called [Spot.IM](https://www.spot.im/)) we use Webpack to bundle our products. After about 4 years and who knows how many hands contributing to the source code, our main product's build time reached a staggering **90 seconds** for initial build and **14 seconds** for re-build.

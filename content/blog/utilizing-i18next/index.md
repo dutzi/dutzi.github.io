@@ -3,6 +3,7 @@ title: Things I've Learnt Utilizing I18next
 date: '2020-01-06T02:55:36.245Z'
 description: 'I18n can be a pain. This quick tutorial should give you enough to alleviate some of it.'
 tags: ['i18n', 'i18next', 'locize']
+issue: 10
 ---
 
 Dealing with i18n can be such a pain. It's one of those things you barely touch so once you do you have to re-learn what you have forgotten since the last time you visited it. You also need to decide who's the source of truth, is it the code? the JSON? the translation service? You've got plurals (which for some languages are comprised of more than two variants), i18n keys (that can't be minified), string interpolation, and on and on and on... All that so you can display a string in a bunch of languages.
@@ -47,13 +48,13 @@ Notice how the key for "Just simple content" is the string itself. You might wan
 
 Also, notice how `<Trans>` break the JSX in a way that stands out for translators and can later be re-assembled and injected to the actual components.
 
-### Creating The JSON
+### Generating the JSON
 
 Once you are done adding `t`'s and `<Trans>`'s, you can use [i18next-scanner](https://github.com/i18next/i18next-scanner), which scans your code for references to i18next and generates a JSON with all the data, ready to be translated (it will merge into an existing JSON if one exists).
 
 It doesn't support TypeScript, but for that you can use [compare-i18n](https://www.npmjs.com/package/compare-i18n) which does some of the work (it will only compare with an existing JSON but won't add the keys).
 
-## Sending To Translators
+## Sending to Translators
 
 I18next is a standard which is adopted by a few translation services, where I work at we chose to go with [Locize](https://locize.com/) that has [One Hour Translation](https://www.onehourtranslation.com/) (**OHT**) integration which makes translating a breeze.
 

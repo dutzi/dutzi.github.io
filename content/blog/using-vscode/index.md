@@ -3,6 +3,7 @@ title: Things I've Learnt Using VSCode
 date: '2020-01-04T06:26:28.307Z'
 description: 'Listing some extensions I found useful and some of my keyboard shortcuts.'
 tags: ['vscode', 'extensions', 'keybindings']
+issue: 9
 ---
 
 [**VSCode**](https://code.visualstudio.com/) is one hell of an editor. About two years after it was initially announced I started using it regularly, and, as much as I cherish Sublime Text, I haven't looked back since.
