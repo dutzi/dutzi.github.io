@@ -658,11 +658,12 @@ body.dark div.pageFooter svg {
   /* text-shadow: 0px 0px 10px #f42aad; */
   background-color: #6739b7;
   padding: 10px 20px;
-  border-radius: 100px;
+  border-radius: 26px;
   /* box-shadow: 0px 1px #591942, 0px 1px 10px -1px #591942; */
   font-family: Montserrat, sans-serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
+  min-width: 300px;
 }
 
 .conversation-outer-wrapper .gt-container .gt-comment-date {
@@ -780,4 +781,10 @@ body.dark .conversation-outer-wrapper .gt-container .gt-comment-body {
 
 body.dark .conversation-outer-wrapper .gt-container .gt-comment-content {
   background: #130b1a;
+}
+
+@media (max-width: 479px) {
+  .conversation-outer-wrapper .gt-container .gt-header-controls .gt-btn {
+    width: auto;
+  }
 }
