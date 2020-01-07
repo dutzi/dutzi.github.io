@@ -511,6 +511,10 @@ body.dark div.pageFooter svg {
   display: none;
 }
 
+.conversation-outer-wrapper .gt-container .gt-comment-reply {
+  display: none;
+}
+
 .conversation-outer-wrapper .gt-container .gt-ico.gt-ico-reply {
   display: none;
 }
