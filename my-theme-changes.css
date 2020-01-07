@@ -465,7 +465,7 @@ body.dark div.pageFooter svg {
 }
 
 .conversation-outer-wrapper .gt-container .gt-comment-body {
-  color: #e0d3d3 !important;
+  color: #000000 !important;
   line-height: 1.8em;
 }
 
@@ -710,6 +710,7 @@ body.dark div.pageFooter svg {
 
 .conversation-outer-wrapper .gt-container .gt-comment-content:hover {
   box-shadow: none;
+  border-radius: 10px;
 }
 
 .conversation-outer-wrapper .gt-container .gt-header-controls .gt-btn:before {
@@ -720,6 +721,11 @@ body.dark div.pageFooter svg {
   display: none;
 }
 
+.conversation-outer-wrapper .gt-container .gt-comment-content {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 /* Conversation Dark Mode */
 
 body.dark .conversation-outer-wrapper {
@@ -728,6 +734,7 @@ body.dark .conversation-outer-wrapper {
 
 body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea,
 body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea:hover {
+  border-radius: 10px;
   background-color: #130c1b;
   color: #ffffff;
   box-shadow: none;
@@ -748,4 +755,12 @@ body.dark .conversation-outer-wrapper p.gt-comments-null:before {
 
 body.dark .conversation-outer-wrapper .gt-container .gt-counts {
   color: #ffffff;
+}
+
+body.dark .conversation-outer-wrapper .gt-container .gt-comment-body {
+  color: #e0d3d3 !important;
+}
+
+body.dark .conversation-outer-wrapper .gt-container .gt-comment-content {
+  background: #130b1a;
 }
