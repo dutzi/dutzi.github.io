@@ -724,6 +724,17 @@ body.dark div.pageFooter svg {
   display: none;
 }
 
+.conversation-outer-wrapper
+  .gt-container
+  .gt-header-controls
+  .gt-btn.gt-btn-public:before {
+  content: 'Submit';
+}
+
+.conversation-outer-wrapper .gt-container .gt-btn.gt-btn-public .gt-btn-text {
+  display: none;
+}
+
 .conversation-outer-wrapper .gt-container .gt-comment-content {
   display: flex;
   flex-direction: column-reverse;
