@@ -1,9 +1,5 @@
 html.dark {
-  background: #1c1527;
-}
-
-html:has(body) {
-  background: white;
+  background: #2f2f2f;
 }
 
 body {
@@ -11,7 +7,7 @@ body {
 }
 
 a {
-  color: #f92aad;
+  color: #a2b34d;
 }
 
 .gatsby-highlight {
@@ -20,17 +16,16 @@ a {
 
 .gatsby-highlight-code-line {
   display: block;
-  background: #ffffff14;
-  margin: 0px -16px;
-  padding: 0px 16px;
+  background: #00000014;
+  margin: 0px -14px;
+  padding: 0px 14px;
 }
 
-:not(pre) > code[class*='language-'],
+/* :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-  /* border-radius: 10px 10px 0px 0px; */
   box-shadow: 0px 0px 40px 0px #0000008f inset, 0px 3px;
   background: linear-gradient(180deg, #3a2b54 75%, #2a223a);
-}
+} */
 
 :not(pre) > code.language-text {
   background: white;
@@ -105,7 +100,7 @@ article header h1 a.editPostLink {
 
 .sidenote {
   padding: 2em;
-  border-left: 4px solid #f92aad;
+  border-left: 4px solid #a2b34d;
   background: #bc1f9017;
   margin: 1.75rem 0px;
 }
@@ -126,6 +121,10 @@ header h3 {
   margin: auto;
 }
 
+pre[class*='language-'] {
+  box-shadow: 0px 0px 1px 0px;
+}
+
 pre::-webkit-scrollbar {
   padding: 10px;
   width: 4px;
@@ -137,7 +136,7 @@ pre::-webkit-scrollbar-track {
 }
 
 pre::-webkit-scrollbar-thumb {
-  background-color: #f92aad;
+  background-color: #a2b34d;
   width: 6px;
   height: 6px;
 }
@@ -173,7 +172,7 @@ div.pageFooter svg {
 
 .github-conversation-wrapper .github-conversation-comment-editor textarea {
   outline: none;
-  box-shadow: 0px 0px 0px 2px #f92aad, 0px 0px 40px #0000008c;
+  box-shadow: 0px 0px 0px 2px #a2b34d, 0px 0px 40px #0000008c;
 }
 
 .conversation-outer-wrapper {
@@ -234,7 +233,7 @@ div.pageFooter svg {
 
 .signature a:hover,
 .signature a:focus {
-  color: #f52aad;
+  color: #a2b34d;
 }
 
 .github-conversation-wrapper
@@ -310,14 +309,14 @@ body.dark {
   color: #e2d8d8;
 }
 
-body.dark :not(pre) > code[class*='language-'],
+/* body.dark :not(pre) > code[class*='language-'],
 body.dark pre[class*='language-'] {
   box-shadow: 0 0 10px 6px rgba(19, 19, 19, 0.38), 0px 3px;
   background: linear-gradient(180deg, #3a2b54 75%, #2a223a);
-}
+} */
 
 body.dark :not(pre) > code.language-text {
-  background: white;
+  background: none;
   box-shadow: none;
 }
 
@@ -389,7 +388,7 @@ body.dark div.pageFooter svg {
 .github-conversation-wrapper
   .github-conversation-comment-editor
   .submit-button {
-  background: #f92aad;
+  background: #a2b34d;
   color: white;
   font-family: inherit;
   font-size: 1em;
@@ -488,8 +487,7 @@ body.dark div.pageFooter svg {
   .gt-container
   .gt-comment-admin
   .gt-comment-content {
-  /* background-color: #130d1b; */
-  background: #130d1b;
+  background: #f6f6f6;
   border-radius: 10px;
 }
 
@@ -533,11 +531,11 @@ body.dark div.pageFooter svg {
 }
 
 .conversation-outer-wrapper .gt-container a {
-  color: #f92aad;
+  color: #a2b34d;
   box-shadow: none;
 }
 .conversation-outer-wrapper .gt-container a:hover {
-  color: #f92aad;
+  color: #a2b34d;
   box-shadow: none;
 }
 
@@ -612,7 +610,7 @@ body.dark div.pageFooter svg {
 }
 
 .conversation-outer-wrapper .gt-container .gt-btn-preview:focus {
-  box-shadow: 0px 0px 0px 2px #f52aad;
+  box-shadow: 0px 0px 0px 2px #a2b34d;
 }
 
 .conversation-outer-wrapper .gt-container .gt-btn {
@@ -644,7 +642,7 @@ body.dark div.pageFooter svg {
   .gt-container
   .gt-header-controls
   .gt-btn.gt-btn-public {
-  background-color: #f52aad;
+  background-color: #a2b34d;
   color: #ffffff;
   border: none;
   font-family: inherit;
@@ -658,7 +656,7 @@ body.dark div.pageFooter svg {
   .gt-header-controls
   .gt-btn.gt-btn-public
   .gt-btn-public:hover {
-  background-color: #f52aad;
+  background-color: #a2b34d;
 }
 
 .conversation-outer-wrapper
@@ -666,11 +664,11 @@ body.dark div.pageFooter svg {
   .gt-header-controls
   .gt-btn.gt-btn-public
   .gt-btn-public:focus {
-  box-shadow: 0px 0px 0px 2px #f52aad;
+  box-shadow: 0px 0px 0px 2px #a2b34d;
 }
 
 .conversation-outer-wrapper .gt-container a {
-  color: #f92aad;
+  color: #a2b34d;
 }
 
 .conversation-outer-wrapper .gt-container .gt-error {
@@ -713,7 +711,7 @@ body.dark div.pageFooter svg {
 }
 
 .conversation-outer-wrapper .gt-container .gt-comment-date {
-  color: #7d2873;
+  color: #a9a9a9;
 }
 
 /* .conversation-outer-wrapper .gt-container .gt-comment-header {
@@ -729,6 +727,11 @@ body.dark div.pageFooter svg {
   .gt-comment-content {
   display: flex;
   flex-direction: column-reverse;
+  margin-left: 0px;
+}
+
+.conversation-outer-wrapper .gt-container .gt-avatar {
+  margin-right: 1.3em;
 }
 
 .conversation-outer-wrapper .gt-container .gt-comment-header {
@@ -773,7 +776,7 @@ body.dark div.pageFooter svg {
   .gt-container
   .gt-header-controls
   .gt-btn.gt-btn-login:before {
-  content: 'Signup with Github';
+  content: 'Signup to Post';
 }
 
 .conversation-outer-wrapper .gt-container .gt-btn.gt-btn-login .gt-btn-text {
@@ -833,11 +836,11 @@ body.dark .conversation-outer-wrapper .gt-container .gt-comment-body {
 }
 
 body.dark .conversation-outer-wrapper .gt-container .gt-comment-content {
-  background: #130b1a;
+  background: #383838;
 }
 
 /* body.dark .conversation-outer-wrapper .gt-counts:before {
-  color: #f52aad;
+  color: #a2b34d;
 } */
 
 body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea,
@@ -855,7 +858,7 @@ body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea:hover {
 }
 
 /* body.dark .conversation-outer-wrapper .gt-container .gt-svg svg {
-  fill: #f92aad;
+  fill: #a2b34d;
 } */
 
 body.dark .conversation-outer-wrapper .gt-container .gt-btn {

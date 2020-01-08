@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Things I've Learnt]]></title><description><![CDATA[Things I learnt building stuff.]]></description><link>https://dutzi.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 08 Jan 2020 17:10:45 GMT</lastBuildDate><item><title><![CDATA[Commenting Solutions For Your Blog]]></title><description><![CDATA[I was looking for a simple commenting system I could embed in my blog, my requirements were: Simple - I’m not looking for threading…]]></description><link>https://dutzi.github.io/adding-a-commenting-system/</link><guid isPermaLink="false">https://dutzi.github.io/adding-a-commenting-system/</guid><pubDate>Tue, 07 Jan 2020 21:54:49 GMT</pubDate><content:encoded>&lt;p&gt;I was looking for a simple commenting system I could embed in my blog, my requirements were:&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Things I've Learnt]]></title><description><![CDATA[Things I learnt building stuff.]]></description><link>https://dutzi.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 08 Jan 2020 17:50:06 GMT</lastBuildDate><item><title><![CDATA[Commenting Solutions For Your Blog]]></title><description><![CDATA[I was looking for a simple commenting system I could embed in my blog, my requirements were: Simple - I’m not looking for threading…]]></description><link>https://dutzi.github.io/adding-a-commenting-system/</link><guid isPermaLink="false">https://dutzi.github.io/adding-a-commenting-system/</guid><pubDate>Tue, 07 Jan 2020 21:54:49 GMT</pubDate><content:encoded>&lt;p&gt;I was looking for a simple commenting system I could embed in my blog, my requirements were:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Simple - I’m not looking for threading, reactions, Giphy integration, uploading images or videos, etc… I just want a simple way for user to read and write comments.&lt;/li&gt;
 &lt;li&gt;Serverless (for me) - Meaning I don’t need to set up a server for it.&lt;/li&gt;
@@ -187,25 +187,25 @@ I had sort of a fight with a colleague who decided we should remove &lt;a href=&
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/49f7f7ca8ea203f2f6a9048f0a050adb/0a7ed/smp-report%402x.png&quot;
+    href=&quot;/static/031171f9940987aeec73c8880d293d25/0a7ed/smp-report%402x.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 177.51605995717347%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAkCAYAAACJ8xqgAAAACXBIWXMAABYlAAAWJQFJUiTwAAADv0lEQVRIx61WaW/jNhS0LFknRVE8JOqyLTs+YzvepN2i2SIFdrf//ydNn7XFop9qO+kHgoCOAefNvHkcOYEDL/GQxAlGo9HHl1mWmB17HPYHCCGQsAScc/AsA2cMdRyhpmcqDG8DjOiHKIkRBMEAGEURQvo5vOy+Dz72ICa0e5PbAFmXwu4qHHYHdNMO0+mMwH04jgM3cOEKAgrGGHnObYDH4wmvr3/g67evePvzDd//+o7dfo9lv4Q5lijeLJI2QaCC2wDX6y22my2ePp2x2W7QtR2KeYnsgejbGOPJ+OfHjnMDYJCGSBVHIQsSgSMOEzijf+g571A5O+coXyusXtZoji2qTY10wZH0DGmewmiFqiKl6xjWRtcBY5lgup9DNAJ2WYHTacupRTEt4E7cQaAwdH+uq4BiJ6H2GvqlhDzqgbrk6gPG/mKhvhiIJwn5WcM8EvBOI+5iiC0ZnTNkZPKbAdM+G+yRLXIUzwTeaTR9jdVeYb7J0LQpPM+7HTDWVMPtDHpu0OxayFyhrRuwOB4+cMd3UuYbAX4UMG8l+IKEqSpM/OD9Ncwec2RHWocc6tlAtgq2NGBsQn3tYnzvCVnDUW8bFPtysE1la+pnjc1aU9fE8P/VKbeJMiPAYwO9MyiOJIpS0Kagl877KOdPCvxRQP6iITY5DPmQxewDNbzU7rVA/knCrAqoBw3fBkMwxF0CxlPyIacWDFCWEfL8imBJwbA4L6Ea8t+ebNMp1A81QhlhIn0EFLaX0GXMI2B/EOu/bUMxpah+6myGDjHCIE/z91Mu3irI3xTyZ1q0m3UBsyvglwHYIkUqONEkn5qA0iaGvha0l7TpT0S5pg5Zd8gXcmg/WRl6OSaT+8O8uXjyQjeOr7RhuswGuvmJTriWKE90Ypvioa+QEoBzL+W05Zg9zVHuLZpVC2sqzOcWPZ3UliEm9xo7Lhmq/Q9j26aiXrbINxrJLINfxXDuBiTbdLspzLJARXYxRYEs53BcGqP++P65kh3kkDb6C6XNWaA0FlJ9ILFZT7Z4JGVfzKCwsYZuDOH7AQX1cnYSEGcJ/bkYhpNdkMJLDl8GcCP3zhpqhtmWVF5Z1NOGVLaDJ+VcwcsmcMM7AQcfngz0rxQQTU5WsQhp+Ps8wJhEcbzxfUOf0RCqHpshC8veoi1bpBVHuuIIbDjcHe9TeZmj/32BfCpRP7UQS4mcZvUlbXSmwWoGTtMvbhL4wr8OGHK6ZiwaZDpD0dD9RmWIsghe4FGXUA19mit0nftB/6YUH+H/XH8DTTwbrO3mTq0AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 177.51605995717347%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAkCAYAAACJ8xqgAAAACXBIWXMAABYlAAAWJQFJUiTwAAADwElEQVRIx61W2W7jRhAUD/HmcDgXh4cOSrYuS7LWTjaIHTjA7ub/P6nS4gaLPK0kex8aA/AodHdVV8/ICR34qY80STEajT4eellhduix3+3BOUeapWCMgRUFWJahSWI09ExG0XWAMf0QpwnCMBwA4zhGRD9H5zMIwFwffEynP74OMJvksNsa++0ek+kE0+mMwAM4jgMv9OBxAgpdjHznOsDD4YiXl7/w5esXvP39hm//fMN2t8OyX0IfKpg3i7RLEcrwOsDVaoPNeoPHTyesN2tMugnMvEJxR+XbBO7Y/fGx41wBGOYRcslghCESGJIohTP6rzznHSwXpxLVS4375xXaQ4d63SBfMKR9hrzMoZVEXRPTTQJr48uAiUgx3c3BWw67rMEo22pqYaYG3tgbCIoi70dcBORbAblTUM8VxEENpQsmPyDsVwv1qsEfBcRnBf1AwFuFZJKAb0joLENBIr8aMO+LQR7FooR5spAThbZvcL+TmK8LtF0O3/evB0wU9XAzg5prtNsOopTomhZZkgwfeO6NJbM1Bztw6LcKbEHE1DXGQfj+HhYPJYoDxb6EfNIQnYStNLJsTHPtwb01w6xlaDYtzK4aZFPbhuZZYb1SNDUJgv9NynWkzAjw0EJtNcyBSJESUhl66byv5PJRonjgEL8p8HUJLQ3yLP9AD8+9ezHgnwT0ijTYSzipi4CHiKnksw5ZnlHmAfklRRH8HDA1GRanJWRL+tt1KFsBO7cIWYgxeWEYhYPhZrQm8nxMZF3QJCObktQ/edLDhGiuUTLx/pLNWw3xh0T5REGnXhnorUFQhcgW5DicoSxJpzokt0mgLhnt2W36I5Xc0ISsJigXYhg/UWt66ZLIg2HfnDV51maSXCg5XxZDueWRMlwJVEfK2Oa462tie0xme2PJeccwe5yj2lm09x2srjEnUnrK1FYRxrcKO6ky1LvvwrZtTbNsUa4V0lmBoE7g3AxIsplsp9BLg/qugTYGRcngeLRGA/f2vVLsxeA26pXc5sRRaQshP+DYWU+yeCBmn/XAsLaabgzR+wH5eZaPHPwkoD6bYTnZBTG8ZAhECC/2buyhyjDbEMv3Fs20JZbtoEkxl/CLMbzoRsBBh0cN9buhOS5JKhYRLf+AZtklUhzfvW3pZ7SE6od28MKqt+iqDnnNkN8zhDYa7o63sbws0f+5QDkVaB478KVASbs6EjFUoZA1ZF+0/ZI2JUsLLgNGjK4ZixaFKmBaut/IAnERww99mhLqYUB7ha5z38u/ysVH+JXxLxzWG0WxYUhMAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;SMP Report&quot;
         title=&quot;SMP Report&quot;
-        src=&quot;/static/49f7f7ca8ea203f2f6a9048f0a050adb/799d3/smp-report%402x.png&quot;
-        srcset=&quot;/static/49f7f7ca8ea203f2f6a9048f0a050adb/00d96/smp-report%402x.png 148w,
-/static/49f7f7ca8ea203f2f6a9048f0a050adb/0b23c/smp-report%402x.png 295w,
-/static/49f7f7ca8ea203f2f6a9048f0a050adb/799d3/smp-report%402x.png 590w,
-/static/49f7f7ca8ea203f2f6a9048f0a050adb/2a3d6/smp-report%402x.png 885w,
-/static/49f7f7ca8ea203f2f6a9048f0a050adb/0a7ed/smp-report%402x.png 934w&quot;
+        src=&quot;/static/031171f9940987aeec73c8880d293d25/799d3/smp-report%402x.png&quot;
+        srcset=&quot;/static/031171f9940987aeec73c8880d293d25/00d96/smp-report%402x.png 148w,
+/static/031171f9940987aeec73c8880d293d25/0b23c/smp-report%402x.png 295w,
+/static/031171f9940987aeec73c8880d293d25/799d3/smp-report%402x.png 590w,
+/static/031171f9940987aeec73c8880d293d25/2a3d6/smp-report%402x.png 885w,
+/static/031171f9940987aeec73c8880d293d25/0a7ed/smp-report%402x.png 934w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         loading=&quot;lazy&quot;
       /&gt;
