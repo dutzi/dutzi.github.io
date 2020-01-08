@@ -1,5 +1,9 @@
-html {
+html.dark {
   background: #1c1527;
+}
+
+html:has(body) {
+  background: white;
 }
 
 body {
@@ -175,6 +179,7 @@ div.pageFooter a {
   margin-bottom: -100px;
   background-color: white;
   color: #ffffff;
+  border-top: 14px dotted #e4e4e4;
   /* transform: rotate(1deg); */
   /* border-top: 15px solid #3a2b54; */
 }
@@ -524,7 +529,7 @@ body.dark div.pageFooter svg {
 }
 
 .conversation-outer-wrapper .gt-container .gt-svg svg {
-  fill: #f92aad;
+  fill: #888888;
 }
 
 .conversation-outer-wrapper .markdown-body .highlight pre,
@@ -548,7 +553,7 @@ body.dark div.pageFooter svg {
   min-height: 126px;
   line-height: 1.8em;
   background-color: #ffffff;
-  box-shadow: 0px 0px 0px 2px #673ab7;
+  box-shadow: 0px 0px 0px 2px #969696;
   color: black;
 }
 
@@ -666,6 +671,12 @@ body.dark div.pageFooter svg {
   min-width: 300px;
 }
 
+@media (max-width: 576px) {
+  .conversation-outer-wrapper p.gt-comments-null:before {
+    border-radius: 10px;
+  }
+}
+
 .conversation-outer-wrapper .gt-container .gt-comment-date {
   color: #7d2873;
 }
@@ -699,8 +710,14 @@ body.dark div.pageFooter svg {
 .conversation-outer-wrapper .gt-counts:before {
   content: 'Conversation ';
   font-size: 2em;
-  color: #f52aad;
+  color: #717171;
   font-weight: 900;
+}
+
+@media (max-width: 576px) {
+  .conversation-outer-wrapper .gt-counts:before {
+    font-size: 1.5em;
+  }
 }
 
 .conversation-outer-wrapper .gt-container .gt-header-controls {
@@ -747,6 +764,7 @@ body.dark div.pageFooter svg {
 /* Conversation Dark Mode */
 
 body.dark .conversation-outer-wrapper {
+  border-top: none;
   background: #1c1527;
 }
 
@@ -783,8 +801,25 @@ body.dark .conversation-outer-wrapper .gt-container .gt-comment-content {
   background: #130b1a;
 }
 
+body.dark .conversation-outer-wrapper .gt-counts:before {
+  color: #f52aad;
+}
+
+body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea,
+body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea:hover {
+  box-shadow: 0px 0px 0px 2px #673ab7;
+}
+
 @media (max-width: 479px) {
   .conversation-outer-wrapper .gt-container .gt-header-controls .gt-btn {
     width: auto;
   }
+
+  .conversation-outer-wrapper .gt-container .gt-header-controls .gt-btn {
+    margin: 0px;
+  }
+}
+
+body.dark .conversation-outer-wrapper .gt-container .gt-svg svg {
+  fill: #f92aad;
 }
