@@ -6,6 +6,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { rhythm } from '../utils/typography'
 import GithubLink from '../components/github-link'
+import DeviderAlt from '../components/devider-alt'
 
 class BlogIndex extends React.Component {
   render() {
@@ -53,7 +54,8 @@ class BlogIndex extends React.Component {
           )
         })}
         <div className="pageFooter">
-          <GithubLink />
+          {/* <GithubLink /> */}
+          <DeviderAlt />
         </div>
       </Layout>
     )

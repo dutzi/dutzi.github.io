@@ -1,5 +1,9 @@
-html {
+html.dark {
   background: #1c1527;
+}
+
+html:has(body) {
+  background: white;
 }
 
 body {
@@ -7,7 +11,7 @@ body {
 }
 
 a {
-  color: #f92aad;
+  color: #e5fb79;
 }
 
 .gatsby-highlight {
@@ -16,17 +20,16 @@ a {
 
 .gatsby-highlight-code-line {
   display: block;
-  background: #ffffff14;
-  margin: 0px -16px;
-  padding: 0px 16px;
+  background: #00000014;
+  margin: 0px -14px;
+  padding: 0px 14px;
 }
 
-:not(pre) > code[class*='language-'],
+/* :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-  /* border-radius: 10px 10px 0px 0px; */
   box-shadow: 0px 0px 40px 0px #0000008f inset, 0px 3px;
   background: linear-gradient(180deg, #3a2b54 75%, #2a223a);
-}
+} */
 
 :not(pre) > code.language-text {
   background: white;
@@ -41,6 +44,7 @@ pre[class*='language-'] {
   padding-top: 0.8rem;
   padding: 10px 4px;
   margin-bottom: 1.75rem;
+  display: none;
 }
 
 .dependencies > p:last-child {
@@ -100,7 +104,7 @@ article header h1 a.editPostLink {
 
 .sidenote {
   padding: 2em;
-  border-left: 4px solid #f92aad;
+  border-left: 4px solid #e5fb79;
   background: #bc1f9017;
   margin: 1.75rem 0px;
 }
@@ -121,6 +125,10 @@ header h3 {
   margin: auto;
 }
 
+pre[class*='language-'] {
+  box-shadow: 0px 0px 1px 0px;
+}
+
 pre::-webkit-scrollbar {
   padding: 10px;
   width: 4px;
@@ -132,7 +140,7 @@ pre::-webkit-scrollbar-track {
 }
 
 pre::-webkit-scrollbar-thumb {
-  background-color: #f92aad;
+  background-color: #e5fb79;
   width: 6px;
   height: 6px;
 }
@@ -156,16 +164,19 @@ pre::-webkit-scrollbar-thumb {
 
 div.pageFooter {
   text-align: center;
-  margin-bottom: 2em;
 }
 
 div.pageFooter a {
   box-shadow: none;
 }
 
+div.pageFooter svg {
+  width: 256px;
+}
+
 .github-conversation-wrapper .github-conversation-comment-editor textarea {
   outline: none;
-  box-shadow: 0px 0px 0px 2px #f92aad, 0px 0px 40px #0000008c;
+  box-shadow: 0px 0px 0px 2px #e5fb79, 0px 0px 40px #0000008c;
 }
 
 .conversation-outer-wrapper {
@@ -206,6 +217,27 @@ div.pageFooter a {
   border: 1px solid #00000029;
   color: #d0d0d0;
   box-shadow: 0px 0px 30px -10px #00000054 inset;
+}
+
+.devider {
+  width: 300px;
+  margin: auto;
+  display: block;
+}
+
+.signature {
+  margin-bottom: -12px !important;
+  display: flex;
+}
+
+.signature a {
+  box-shadow: none;
+  color: inherit;
+}
+
+.signature a:hover,
+.signature a:focus {
+  color: #e5fb79;
 }
 
 .github-conversation-wrapper
@@ -281,14 +313,14 @@ body.dark {
   color: #e2d8d8;
 }
 
-body.dark :not(pre) > code[class*='language-'],
+/* body.dark :not(pre) > code[class*='language-'],
 body.dark pre[class*='language-'] {
   box-shadow: 0 0 10px 6px rgba(19, 19, 19, 0.38), 0px 3px;
   background: linear-gradient(180deg, #3a2b54 75%, #2a223a);
-}
+} */
 
 body.dark :not(pre) > code.language-text {
-  background: white;
+  background: none;
   box-shadow: none;
 }
 
@@ -360,7 +392,7 @@ body.dark div.pageFooter svg {
 .github-conversation-wrapper
   .github-conversation-comment-editor
   .submit-button {
-  background: #f92aad;
+  background: #e5fb79;
   color: white;
   font-family: inherit;
   font-size: 1em;
@@ -491,6 +523,11 @@ body.dark div.pageFooter svg {
   font-size: 2.1rem;
   line-height: 1.1;
   color: white;
+  display: none;
+}
+
+.conversation-outer-wrapper .gt-container .gt-header-comment {
+  margin: 0px;
 }
 
 .conversation-outer-wrapper .gt-container .gt-user {
@@ -499,11 +536,11 @@ body.dark div.pageFooter svg {
 }
 
 .conversation-outer-wrapper .gt-container a {
-  color: #f92aad;
+  color: #e5fb79;
   box-shadow: none;
 }
 .conversation-outer-wrapper .gt-container a:hover {
-  color: #f92aad;
+  color: #e5fb79;
   box-shadow: none;
 }
 
@@ -524,7 +561,7 @@ body.dark div.pageFooter svg {
 }
 
 .conversation-outer-wrapper .gt-container .gt-svg svg {
-  fill: #f92aad;
+  fill: #888888;
 }
 
 .conversation-outer-wrapper .markdown-body .highlight pre,
@@ -547,13 +584,19 @@ body.dark div.pageFooter svg {
 .conversation-outer-wrapper .gt-container .gt-header-textarea:hover {
   min-height: 126px;
   line-height: 1.8em;
-  background-color: #ffffff;
-  box-shadow: 0px 0px 0px 2px #673ab7;
   color: black;
+  font-size: 1.1em;
+  padding: 12px 20px;
+  border-radius: 0px;
+  border: none;
+}
+
+.conversation-outer-wrapper .gt-avatar-github {
+  display: none;
 }
 
 .conversation-outer-wrapper .gt-container .gt-header-textarea:focus {
-  box-shadow: 0px 0px 0px 2px #f52aad;
+  background: #f0f0f0;
 }
 
 .conversation-outer-wrapper .gt-container .gt-header-controls {
@@ -572,21 +615,23 @@ body.dark div.pageFooter svg {
 }
 
 .conversation-outer-wrapper .gt-container .gt-btn-preview:focus {
-  box-shadow: 0px 0px 0px 2px #f52aad;
+  box-shadow: 0px 0px 0px 2px #e5fb79;
 }
 
 .conversation-outer-wrapper .gt-container .gt-btn {
-  background: #f529ac;
-  color: white;
+  background: #f6f6f6;
+  color: #252525;
   border: none;
+  box-shadow: 0px 10px 20px -10px #00000073;
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
   margin-left: 0.75em !important;
+  transition: all 0.5s;
 }
 
 .conversation-outer-wrapper .gt-container .gt-btn:focus {
-  box-shadow: 0px 0px 0px 2px #f52aad;
+  box-shadow: 0px 10px 20px -10px #000000;
 }
 
 .conversation-outer-wrapper .gt-container .gt-btn {
@@ -602,7 +647,7 @@ body.dark div.pageFooter svg {
   .gt-container
   .gt-header-controls
   .gt-btn.gt-btn-public {
-  background-color: #f52aad;
+  background-color: #e5fb79;
   color: #ffffff;
   border: none;
   font-family: inherit;
@@ -616,7 +661,7 @@ body.dark div.pageFooter svg {
   .gt-header-controls
   .gt-btn.gt-btn-public
   .gt-btn-public:hover {
-  background-color: #f52aad;
+  background-color: #e5fb79;
 }
 
 .conversation-outer-wrapper
@@ -624,11 +669,11 @@ body.dark div.pageFooter svg {
   .gt-header-controls
   .gt-btn.gt-btn-public
   .gt-btn-public:focus {
-  box-shadow: 0px 0px 0px 2px #f52aad;
+  box-shadow: 0px 0px 0px 2px #e5fb79;
 }
 
 .conversation-outer-wrapper .gt-container a {
-  color: #f92aad;
+  color: #e5fb79;
 }
 
 .conversation-outer-wrapper .gt-container .gt-error {
@@ -650,19 +695,24 @@ body.dark div.pageFooter svg {
 }
 
 .conversation-outer-wrapper p.gt-comments-null:before {
-  content: 'Leave a comment and start the conversation 🚀';
+  content: 'Leave a comment and start the conversation \1F680';
   position: absolute;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   font-size: 16px;
-  /* text-shadow: 0px 0px 10px #f42aad; */
-  background-color: #6739b7;
   padding: 10px 20px;
-  border-radius: 100px;
-  /* box-shadow: 0px 1px #591942, 0px 1px 10px -1px #591942; */
+  border-radius: 26px;
   font-family: Montserrat, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   text-rendering: optimizeLegibility;
+  min-width: 300px;
+  color: #000000;
+}
+
+@media (max-width: 576px) {
+  .conversation-outer-wrapper p.gt-comments-null:before {
+    border-radius: 10px;
+  }
 }
 
 .conversation-outer-wrapper .gt-container .gt-comment-date {
@@ -698,8 +748,14 @@ body.dark div.pageFooter svg {
 .conversation-outer-wrapper .gt-counts:before {
   content: 'Conversation ';
   font-size: 2em;
-  color: #f52aad;
+  color: #717171;
   font-weight: 900;
+}
+
+@media (max-width: 576px) {
+  .conversation-outer-wrapper .gt-counts:before {
+    font-size: 1.5em;
+  }
 }
 
 .conversation-outer-wrapper .gt-container .gt-header-controls {
@@ -746,28 +802,29 @@ body.dark div.pageFooter svg {
 /* Conversation Dark Mode */
 
 body.dark .conversation-outer-wrapper {
-  background: #1c1527;
+  background: #2f2f2f;
 }
 
 body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea,
 body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea:hover {
-  border-radius: 10px;
-  background-color: #130c1b;
+  border-radius: 0px;
+  background-color: #2f2f2f;
   color: #ffffff;
   box-shadow: none;
+  border-left: 2px solid #565656;
 }
 
 body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea:focus {
-  box-shadow: 0px 0px 0px 2px #f52aad;
+  border-left: 4px solid #565656;
 }
 
 body.dark .conversation-outer-wrapper .gt-container .gt-btn {
-  background: linear-gradient(#f52aad, #9c27b0);
-  color: black;
+  background: #4a4a4a;
+  color: white;
 }
 
 body.dark .conversation-outer-wrapper p.gt-comments-null:before {
-  background: #130b1a;
+  color: #bdbdbd;
 }
 
 body.dark .conversation-outer-wrapper .gt-container .gt-counts {
@@ -780,4 +837,56 @@ body.dark .conversation-outer-wrapper .gt-container .gt-comment-body {
 
 body.dark .conversation-outer-wrapper .gt-container .gt-comment-content {
   background: #130b1a;
+}
+
+/* body.dark .conversation-outer-wrapper .gt-counts:before {
+  color: #e5fb79;
+} */
+
+body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea,
+body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea:hover {
+}
+
+@media (max-width: 479px) {
+  .conversation-outer-wrapper .gt-container .gt-header-controls .gt-btn {
+    width: auto;
+  }
+
+  .conversation-outer-wrapper .gt-container .gt-header-controls .gt-btn {
+    margin: 0px;
+  }
+}
+
+/* body.dark .conversation-outer-wrapper .gt-container .gt-svg svg {
+  fill: #e5fb79;
+} */
+
+body.dark .conversation-outer-wrapper .gt-container .gt-btn {
+  background: none;
+  box-shadow: none;
+  color: #888;
+}
+
+body.dark
+  .conversation-outer-wrapper
+  .gt-container
+  .gt-header-textarea:focus
+  ~ .gt-header-controls
+  .gt-btn-login,
+body.dark
+  .conversation-outer-wrapper
+  .gt-container
+  .gt-header-controls
+  .gt-btn-login:focus {
+  box-shadow: 0px 0px 0px 0px #666666, 0px 10px 20px -10px #00000073;
+  background: #4a4a4a;
+  color: white;
+}
+
+body.dark
+  .conversation-outer-wrapper
+  .gt-container
+  .gt-header-controls
+  .gt-btn-login:focus {
+  box-shadow: 0px 0px 0px 2px #666666, 0px 10px 20px -10px #00000073;
 }

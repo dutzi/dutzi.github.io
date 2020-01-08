@@ -8,6 +8,7 @@ import { rhythm, scale } from '../utils/typography'
 import GithubConversation from '../components/github-conversation'
 import Conversation from '../components/conversation'
 import GithubLink from '../components/github-link'
+import Devider from '../components/devider'
 
 function BlogPostTemplate({ data, pageContext, location, uri }) {
   const post = data.markdownRemark
@@ -36,6 +37,13 @@ function BlogPostTemplate({ data, pageContext, location, uri }) {
             >
               ✎
             </a>
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+              document.querySelector('.editPostLink').href = 'https://github.com/dutzi/dutzi.github.io/edit/site/content/blog/' + window.location.pathname.slice(1, -1) + '/index.md';
+            `,
+              }}
+            ></script>
             {post.frontmatter.title}
           </h1>
           <p
@@ -54,9 +62,6 @@ function BlogPostTemplate({ data, pageContext, location, uri }) {
           <nav>
             <ul
               style={{
-                display: `flex`,
-                flexWrap: `wrap`,
-                justifyContent: `space-between`,
                 listStyle: `none`,
                 padding: 0,
               }}
@@ -77,9 +82,10 @@ function BlogPostTemplate({ data, pageContext, location, uri }) {
               </li>
             </ul>
           </nav>
-          <div className="pageFooter">
+          {/* <div className="pageFooter">
             <GithubLink />
-          </div>
+          </div> */}
+          <Devider />
           <Conversation title={post.frontmatter.title} />
         </footer>
       </article>

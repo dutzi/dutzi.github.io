@@ -23,26 +23,30 @@ I work [at a company](https://www.spot.im/) where our main product is an embedda
 
 I didn't go too in-depth when going through these kind of systems, since I wasn't too happy with how customizable they were, so I will only skim through them.
 
-First, there's [Disqus](https://disqus.com/), they have a ton of features but customization is not one of them. I mean, they are customizable to some extent, but not what I was looking for. They have a pricing model where free usage is supported by ads, otherwise you pay \$10-\$100 a month.
+First, there's [Spot.IM](https://www.spot.im/), which is where I work at, that has a feature packed commenting solutions, it's customizable to a good extent (and you can override their CSS, no iframes here) and free. Only thing is they only work with [big](https://www.foxnews.com/) [publishers](https://www.aol.com/). I guess I could've added it to my blog, since I do work there, but I was a lot more happy with the idea I came up with eventually.
 
-There's also [Commento](https://commento.io/), [Facebook Comments](https://developers.facebook.com/docs/plugins/comments/), [Just Comments](https://just-comments.com/), [Hyvor](https://hyvor.com/) and [others](https://www.gatsbyjs.org/docs/adding-comments/). Again, not customizable enough.
+There's also [Disqus](https://disqus.com/), they have a ton of features but customization is not one of them. I mean, they are customizable to some extent, but not what I was looking for. They have a pricing model where free usage is supported by ads, otherwise you pay \$10-\$100 a month.
 
-## Github Issues Based
+And there's also [Commento](https://commento.io/), [Facebook Comments](https://developers.facebook.com/docs/plugins/comments/), [Just Comments](https://just-comments.com/), [Hyvor](https://hyvor.com/) and [others](https://www.gatsbyjs.org/docs/adding-comments/). Again, not customizable enough.
 
-As I was going through existing solutions a thought came to my mind - why not use Github Issues as a platform for comments?
+## Github Issues Based Comments
+
+As I was going through existing solutions a thought came to mind — why not use Github Issues as a platform for comments?
 
 Theoretically, you can create an issue per each blog post you publish, and then using [Github's extensive API](https://developer.github.com/v3/issues/), display comments for that issue on your site, as if they were comments for your post, and let users add comments to that blog post by having them actually sent as comments to that Github issue.
 
-Excited with that idea I started working on a POC, I was very easily able to display comments (and on the way break [Github's rate limits](https://developer.github.com/v3/#rate-limiting) by forgetting to provide a `useEffect` with a dependency list and causing my blog to send a bazillion requests to Github), then as I was trying to add Github's OAuth login to my blog I found I wasn't the first person to think about this "hack".
+Excited with that idea I started working on a POC, I was very easily able to display comments (and on the way break Github's rate limits by forgetting to provide a `useEffect` with a dependency list and causing my blog to send a bazillion requests to Github), then as I was trying to add Github's OAuth login to my blog I found I wasn't the first person to think about this "hack".
 
 Turns out there are 4 different solutions based on the same idea.
 
-[Gitment](https://github.com/imsun/gitment), the first one I tried, seemed promising but I was just not able to set it up. After coming across some `alert`s and certification warnings, and seeing it had 129 open issues and almost two years since the last commit, I gave up. It's approach was similar to what I had in mind, create an issue per each blog post, display the comments using Github's API and, by creating a Github App for my blog and using it to get an auth token, let users submit comments directly from my blog. Too bad it doesn't work anymore, but there were other solutions.
+[Gitment](https://github.com/imsun/gitment), the first one I tried, seemed promising but I was just not able to set it up. After coming across some `alert`s and certification warnings, and seeing it had 129 open issues and almost two years since the last commit, I gave up. Its approach was similar to what I had in mind, create an issue per each blog post, display the comments using Github's API and, by creating a Github App for my blog and using it to get an auth token, let users submit comments directly from my blog. Too bad it doesn't work anymore, but there were other solutions.
 
-[Vssue](https://vssue.js.org/), similar to Gitment, but it supports Gitlab, Bitbucket, Gitee or Gitea issue systems. I also has a few more features (users can edit and delete comments without visiting Github). It's based on Vue and I didn't feel like hacking it to work with a Gatsby based blog, so on to the next one.
+[Vssue](https://vssue.js.org/), similar to Gitment, but it supports Gitlab, Bitbucket, Gitee or Gitea issue systems. It also has a few more features (users can edit and delete comments without visiting Github). It's based on Vue and I didn't feel like hacking it to work with a Gatsby based blog, so on to the next one.
 
-[Utterances](https://utteranc.es/), the one that definitely stands out here. It doesn't require setting up a Github App, but uses [its own app](https://github.com/apps/utterances) to get the token needed for submitting comments. It seems promising because it's well maintained and its UI is very nice and consistent with Github's (it's based on [Primer](https://primer.style/), GitHub's design system). The only drawback, for me, was the lack of extensive customization options. Utterances opens up in an iframe, so you can't just override its CSS, you are able to submit your own theme, but one that only overrides the colors and some spacing variables.
+[Utterances](https://utteranc.es/), the one that definitely stands out here. It doesn't require setting up a Github App, but uses [its own app](https://github.com/apps/utterances) to get the token needed for submitting comments. It seems promising because it's well maintained and its UI is very nice and consistent with Github's (it's based on [Primer](https://primer.style/), GitHub's design system). The only drawback, for me, was the lack of extensive customization options. Utterances opens up in an iframe, so you can't just override its CSS. You are able to submit your own theme, but one that only overrides the colors and some spacing variables.
 
-[Gitalk](https://github.com/gitalk/gitalk), the one I ended up going with, is very similar to Gitment, except that it actually works. After creating the Github App (that's needed for the token), and providing Gitalk with some basic parameters I was able to see it live on my blog. Then, by overriding its CSS I was easily able to play around with the way it looks.
+[Gitalk](https://github.com/gitalk/gitalk), the one I ended up going with, is very similar to Gitment, except it actually works. After creating the Github App (that's needed for the token), and providing Gitalk with some basic parameters I was able to see it live on my blog. Then, by overriding its CSS I was able to play around with the way it looks.
 
 Gitalk will automatically create a Github Issue in your blog's repository as soon as you visit a blog post page for the first time. So all I need to do is simply publish a post and visit its page. Awesome!
+
+The main downside to this Github based approach is [Github's rate limits](https://developer.github.com/v3/#rate-limiting), which stand on 60 requests per hour. Which is enough for a small blog, but reaching is pretty easy while developing the blog.

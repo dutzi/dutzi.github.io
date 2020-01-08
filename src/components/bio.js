@@ -8,7 +8,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
-
+import Signature from './signature'
 import { rhythm } from '../utils/typography'
 
 const Bio = ({ greeting }) => {
@@ -67,7 +67,8 @@ const Bio = ({ greeting }) => {
       ) : (
         <p style={{ margin: '0' }}>
           Thanks for reading!
-          <br />— <strong>{author}</strong>
+          <Signature />
+          {/* <br />— <strong>{author}</strong> */}
         </p>
       )}
     </div>

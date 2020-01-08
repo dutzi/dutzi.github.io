@@ -6,9 +6,11 @@ export default function DarkMode() {
 
     if (isDark) {
       document.body.classList.add('dark')
+      document.querySelector('html').classList.add('dark')
       window.localStorage.setItem('dark', '1')
     } else {
       document.body.classList.remove('dark')
+      document.querySelector('html').classList.remove('dark')
       window.localStorage.removeItem('dark')
     }
   }

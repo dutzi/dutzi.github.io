@@ -22,6 +22,7 @@ export default function HTML(props) {
               }
               if (window.localStorage.getItem('dark')) {
                 document.body.classList.add('dark')
+                document.querySelector('html').classList.add('dark')
               }
         `,
           }}
