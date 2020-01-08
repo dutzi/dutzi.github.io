@@ -101,7 +101,7 @@ article header h1 a.editPostLink {
 .sidenote {
   padding: 2em;
   border-left: 4px solid #a2b34d;
-  background: #bc1f9017;
+  background: #a2b34d33;
   margin: 1.75rem 0px;
 }
 
@@ -342,11 +342,6 @@ body.dark blockquote {
 
 body.dark .sidenote {
   background: rgba(0, 0, 0, 0.21);
-  border-left-color: #b32480;
-}
-
-body.dark .dependencies {
-  border-top-color: #b82382;
 }
 
 body.dark .dependencies .dep {
