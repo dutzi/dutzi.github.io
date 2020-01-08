@@ -179,7 +179,6 @@ div.pageFooter a {
   margin-bottom: -100px;
   background-color: white;
   color: #ffffff;
-  border-top: 14px dotted #e4e4e4;
   /* transform: rotate(1deg); */
   /* border-top: 15px solid #3a2b54; */
 }
@@ -211,6 +210,27 @@ div.pageFooter a {
   border: 1px solid #00000029;
   color: #d0d0d0;
   box-shadow: 0px 0px 30px -10px #00000054 inset;
+}
+
+.devider {
+  width: 300px;
+  margin: auto;
+  display: block;
+}
+
+.signature {
+  margin-bottom: -12px !important;
+  display: flex;
+}
+
+.signature a {
+  box-shadow: none;
+  color: inherit;
+}
+
+.signature a:hover,
+.signature a:focus {
+  color: #f52aad;
 }
 
 .github-conversation-wrapper
@@ -496,6 +516,11 @@ body.dark div.pageFooter svg {
   font-size: 2.1rem;
   line-height: 1.1;
   color: white;
+  display: none;
+}
+
+.conversation-outer-wrapper .gt-container .gt-header-comment {
+  margin: 0px;
 }
 
 .conversation-outer-wrapper .gt-container .gt-user {
@@ -552,13 +577,19 @@ body.dark div.pageFooter svg {
 .conversation-outer-wrapper .gt-container .gt-header-textarea:hover {
   min-height: 126px;
   line-height: 1.8em;
-  background-color: #ffffff;
-  box-shadow: 0px 0px 0px 2px #969696;
   color: black;
+  font-size: 1.1em;
+  padding: 12px 20px;
+  border-radius: 0px;
+  border: none;
+}
+
+.conversation-outer-wrapper .gt-avatar-github {
+  display: none;
 }
 
 .conversation-outer-wrapper .gt-container .gt-header-textarea:focus {
-  box-shadow: 0px 0px 0px 2px #f52aad;
+  background: #f0f0f0;
 }
 
 .conversation-outer-wrapper .gt-container .gt-header-controls {
@@ -581,17 +612,19 @@ body.dark div.pageFooter svg {
 }
 
 .conversation-outer-wrapper .gt-container .gt-btn {
-  background: #f529ac;
-  color: white;
+  background: #f6f6f6;
+  color: #252525;
   border: none;
+  box-shadow: 0px 10px 20px -10px #00000073;
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
   margin-left: 0.75em !important;
+  transition: all 0.5s;
 }
 
 .conversation-outer-wrapper .gt-container .gt-btn:focus {
-  box-shadow: 0px 0px 0px 2px #f52aad;
+  box-shadow: 0px 10px 20px -10px #000000;
 }
 
 .conversation-outer-wrapper .gt-container .gt-btn {
@@ -655,20 +688,18 @@ body.dark div.pageFooter svg {
 }
 
 .conversation-outer-wrapper p.gt-comments-null:before {
-  content: 'Leave a comment and start the conversation 🚀';
+  content: 'Leave a comment and start the conversation \1F680';
   position: absolute;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   font-size: 16px;
-  /* text-shadow: 0px 0px 10px #f42aad; */
-  background-color: #6739b7;
   padding: 10px 20px;
   border-radius: 26px;
-  /* box-shadow: 0px 1px #591942, 0px 1px 10px -1px #591942; */
   font-family: Montserrat, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   text-rendering: optimizeLegibility;
   min-width: 300px;
+  color: #000000;
 }
 
 @media (max-width: 576px) {
@@ -764,29 +795,29 @@ body.dark div.pageFooter svg {
 /* Conversation Dark Mode */
 
 body.dark .conversation-outer-wrapper {
-  border-top: none;
-  background: #1c1527;
+  background: #2f2f2f;
 }
 
 body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea,
 body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea:hover {
-  border-radius: 10px;
-  background-color: #130c1b;
+  border-radius: 0px;
+  background-color: #2f2f2f;
   color: #ffffff;
   box-shadow: none;
+  border-left: 2px solid #565656;
 }
 
 body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea:focus {
-  box-shadow: 0px 0px 0px 2px #f52aad;
+  border-left: 4px solid #565656;
 }
 
 body.dark .conversation-outer-wrapper .gt-container .gt-btn {
-  background: linear-gradient(#f52aad, #9c27b0);
-  color: black;
+  background: #4a4a4a;
+  color: white;
 }
 
 body.dark .conversation-outer-wrapper p.gt-comments-null:before {
-  background: #130b1a;
+  color: #bdbdbd;
 }
 
 body.dark .conversation-outer-wrapper .gt-container .gt-counts {
@@ -801,13 +832,12 @@ body.dark .conversation-outer-wrapper .gt-container .gt-comment-content {
   background: #130b1a;
 }
 
-body.dark .conversation-outer-wrapper .gt-counts:before {
+/* body.dark .conversation-outer-wrapper .gt-counts:before {
   color: #f52aad;
-}
+} */
 
 body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea,
 body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea:hover {
-  box-shadow: 0px 0px 0px 2px #673ab7;
 }
 
 @media (max-width: 479px) {
@@ -820,6 +850,36 @@ body.dark .conversation-outer-wrapper .gt-container .gt-header-textarea:hover {
   }
 }
 
-body.dark .conversation-outer-wrapper .gt-container .gt-svg svg {
+/* body.dark .conversation-outer-wrapper .gt-container .gt-svg svg {
   fill: #f92aad;
+} */
+
+body.dark .conversation-outer-wrapper .gt-container .gt-btn {
+  background: none;
+  box-shadow: none;
+  color: #888;
+}
+
+body.dark
+  .conversation-outer-wrapper
+  .gt-container
+  .gt-header-textarea:focus
+  ~ .gt-header-controls
+  .gt-btn-login,
+body.dark
+  .conversation-outer-wrapper
+  .gt-container
+  .gt-header-controls
+  .gt-btn-login:focus {
+  box-shadow: 0px 0px 0px 0px #666666, 0px 10px 20px -10px #00000073;
+  background: #4a4a4a;
+  color: white;
+}
+
+body.dark
+  .conversation-outer-wrapper
+  .gt-container
+  .gt-header-controls
+  .gt-btn-login:focus {
+  box-shadow: 0px 0px 0px 2px #666666, 0px 10px 20px -10px #00000073;
 }
