@@ -45,6 +45,7 @@ pre[class*='language-'] {
   padding-top: 0.8rem;
   padding: 10px 4px;
   margin-bottom: 1.75rem;
+  display: none;
 }
 
 .dependencies > p:last-child {
@@ -160,11 +161,14 @@ pre::-webkit-scrollbar-thumb {
 
 div.pageFooter {
   text-align: center;
-  margin-bottom: 2em;
 }
 
 div.pageFooter a {
   box-shadow: none;
+}
+
+div.pageFooter svg {
+  width: 256px;
 }
 
 .github-conversation-wrapper .github-conversation-comment-editor textarea {
