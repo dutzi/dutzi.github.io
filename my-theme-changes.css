@@ -10,13 +10,23 @@ a {
   color: #a2b34d;
 }
 
+.bio a {
+  color: inherit;
+  box-shadow: none;
+}
+
+.bio a:focus,
+.bio a:hover {
+  color: #a2b34d;
+}
+
 .gatsby-highlight {
   margin-bottom: 1.75rem;
 }
 
 .gatsby-highlight-code-line {
   display: block;
-  background: #00000014;
+  background: #ffffff14;
   margin: 0px -14px;
   padding: 0px 14px;
 }
@@ -318,6 +328,7 @@ body.dark pre[class*='language-'] {
 body.dark :not(pre) > code.language-text {
   background: none;
   box-shadow: none;
+  color: #e5fb79;
 }
 
 body.dark h1,
