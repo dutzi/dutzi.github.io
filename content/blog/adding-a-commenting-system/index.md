@@ -49,4 +49,4 @@ Turns out there are 4 different solutions based on the same idea.
 
 Gitalk will automatically create a Github Issue in your blog's repository as soon as you visit a blog post page for the first time. So all I need to do is simply publish a post and visit its page. Awesome!
 
-The main downside to this Github based approach is [Github's rate limits](https://developer.github.com/v3/#rate-limiting), which stand on 60 requests per hour. Which is enough for a small blog, but reaching is pretty easy while developing the blog.
+The main downside to this Github based approach is [Github's rate limits](https://developer.github.com/v3/#rate-limiting), which stands at 60 requests per hour. Which is enough for a small blog, but reaching is pretty easy while developing the blog.
