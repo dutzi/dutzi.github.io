@@ -18,41 +18,43 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
         <Bio greeting />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          const tags = node.frontmatter.tags
-          return (
-            <article key={node.fields.slug}>
-              <header>
-                <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
-                >
-                  <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                    {title}
-                  </Link>
-                </h3>
-                <small>{node.frontmatter.date}</small>
-              </header>
-              <section>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                />
-              </section>
-              <div className="tags">
-                {tags &&
-                  tags.map(tag => (
-                    <span key={tag} className="tag">
-                      {tag}
-                    </span>
-                  ))}
-              </div>
-            </article>
-          )
-        })}
+        {posts
+          .filter(({ node }) => !node.frontmatter.unlisted)
+          .map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug
+            const tags = node.frontmatter.tags
+            return (
+              <article key={node.fields.slug}>
+                <header>
+                  <h3
+                    style={{
+                      marginBottom: rhythm(1 / 4),
+                    }}
+                  >
+                    <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                      {title}
+                    </Link>
+                  </h3>
+                  <small>{node.frontmatter.date}</small>
+                </header>
+                <section>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: node.frontmatter.description || node.excerpt,
+                    }}
+                  />
+                </section>
+                <div className="tags">
+                  {tags &&
+                    tags.map(tag => (
+                      <span key={tag} className="tag">
+                        {tag}
+                      </span>
+                    ))}
+                </div>
+              </article>
+            )
+          })}
         <div className="pageFooter">
           {/* <GithubLink /> */}
           <DeviderAlt />
@@ -83,6 +85,7 @@ export const pageQuery = graphql`
             title
             description
             tags
+            # unlisted
           }
         }
       }

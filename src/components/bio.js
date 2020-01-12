@@ -35,6 +35,7 @@ const Bio = ({ greeting }) => {
   const { author } = data.site.siteMetadata
   return (
     <div
+      className="bio"
       style={{
         display: `flex`,
         marginBottom: rhythm(1.5),
@@ -60,9 +61,14 @@ const Bio = ({ greeting }) => {
             <span role="img" aria-label="waving hand">
               👋
             </span>{' '}
-            I'm <strong>{author}!</strong>
+            I'm{' '}
+            <strong>
+              <a href="https://github.com/dutzi">{author}</a>,
+            </strong>
           </p>
-          <p style={{ margin: '0', fontSize: '1em' }}>And here are some...</p>
+          <p style={{ margin: '0', fontSize: '1em' }}>
+            Here are some words about things:
+          </p>
         </div>
       ) : (
         <p style={{ margin: '0' }}>

@@ -2,16 +2,16 @@ import React, { useEffect } from 'react'
 
 export default function DarkMode() {
   function handleClick() {
-    const isDark = !window.localStorage.getItem('dark')
+    const isLight = !window.localStorage.getItem('light')
 
-    if (isDark) {
-      document.body.classList.add('dark')
-      document.querySelector('html').classList.add('dark')
-      window.localStorage.setItem('dark', '1')
-    } else {
+    if (isLight) {
       document.body.classList.remove('dark')
       document.querySelector('html').classList.remove('dark')
-      window.localStorage.removeItem('dark')
+      window.localStorage.setItem('light', '1')
+    } else {
+      document.body.classList.add('dark')
+      document.querySelector('html').classList.add('dark')
+      window.localStorage.removeItem('light')
     }
   }
 

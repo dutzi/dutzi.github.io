@@ -20,7 +20,7 @@ export default function HTML(props) {
               if (window.location.host === 'dutzi.github.io') {
                 window.location.replace('https://dutzi.party' + window.location.pathname);
               }
-              if (window.localStorage.getItem('dark')) {
+              if (!window.localStorage.getItem('light')) {
                 document.body.classList.add('dark')
                 document.querySelector('html').classList.add('dark')
               }
