@@ -30,9 +30,9 @@ a {
 
 .gatsby-highlight-code-line {
   display: block;
-  background: #ffffff14;
-  margin: 0px -14px;
-  padding: 0px 14px;
+  background: #b0722c1c;
+  margin: 0px -15px;
+  padding: 0px 15px;
 }
 
 /* :not(pre) > code[class*='language-'],
@@ -42,9 +42,10 @@ pre[class*='language-'] {
 } */
 
 :not(pre) > code.language-text {
-  background: white;
+  background: none;
   box-shadow: none;
   text-shadow: none;
+  color: #a2b34d;
   padding: 0px;
   font-size: 0.95em;
 }

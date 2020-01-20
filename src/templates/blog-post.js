@@ -86,6 +86,7 @@ function BlogPostTemplate({ data, pageContext, location, uri }) {
             <GithubLink />
           </div> */}
           <Devider />
+          <div id="emojics-root"></div>
           <Conversation title={post.frontmatter.title} />
         </footer>
       </article>

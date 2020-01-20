@@ -1,25 +1,20 @@
-/*
-Name:   Base2Tone-Forest Light
-Author: by Bram de Haan, adapted from DuoTone themes by Simurai (http://simurai.com/projects/2016/01/01/duotone-themes)
-
-http://atelierbram.github.io/Base2Tone-prism/demo/evening/light/
-Prism template for Base2Tone by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/prism/)
-Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
-*/
+/**
+ * a11y-dark theme for JavaScript, CSS, and HTML
+ * Based on the okaidia theme: https://github.com/PrismJS/prism/blob/gh-pages/themes/prism-okaidia.css
+ * @author ericwbailey
+ */
 
 code[class*='language-'],
 pre[class*='language-'] {
-  font-family: Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono',
-    'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
-    'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L',
-    'Courier New', Courier, monospace;
-  font-size: 14px;
-  line-height: 1.375;
-  direction: ltr;
+  color: #f8f8f2;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
 
   -moz-tab-size: 4;
   -o-tab-size: 4;
@@ -29,24 +24,6 @@ pre[class*='language-'] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-  background: #fbfbf8;
-  color: #687d68;
-}
-
-pre[class*='language-']::-moz-selection,
-pre[class*='language-'] ::-moz-selection,
-code[class*='language-']::-moz-selection,
-code[class*='language-'] ::-moz-selection {
-  text-shadow: none;
-  background: #fbfbf8;
-}
-
-pre[class*='language-']::selection,
-pre[class*='language-'] ::selection,
-code[class*='language-']::selection,
-code[class*='language-'] ::selection {
-  text-shadow: none;
-  background: #fbfbf8;
 }
 
 /* Code blocks */
@@ -54,87 +31,76 @@ pre[class*='language-'] {
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
+  border-radius: 0.3em;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: #2b2b2b;
 }
 
 /* Inline code */
 :not(pre) > code[class*='language-'] {
   padding: 0.1em;
   border-radius: 0.3em;
+  white-space: normal;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #c3c6b3;
+  color: #d4d0ab;
 }
 
 .token.punctuation {
-  color: #c3c6b3;
-}
-
-.token.namespace {
-  opacity: 0.7;
-}
-
-.token.tag,
-.token.operator,
-.token.number {
-  color: #435643;
+  color: #fefefe;
 }
 
 .token.property,
-.token.function {
-  color: #a2b34d;
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #ffa07a;
 }
 
-.token.tag-id,
-.token.selector,
-.token.atrule-id {
-  color: #656b47;
-}
-
-code.language-javascript,
-.token.attr-name {
-  color: #a2b34d;
-}
-
-code.language-css,
-code.language-scss,
 .token.boolean,
+.token.number {
+  color: #00e0e0;
+}
+
+.token.selector,
+.token.attr-name,
 .token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #abe338;
+}
+
+.token.operator,
 .token.entity,
 .token.url,
 .language-css .token.string,
-.language-scss .token.string,
 .style .token.string,
-.token.attr-value,
-.token.keyword,
-.token.control,
-.token.directive,
-.token.unit,
-.token.statement,
-.token.regex,
-.token.atrule {
-  color: #5c705c;
-}
-
-.token.placeholder,
 .token.variable {
-  color: #b3d6b3;
+  color: #00e0e0;
 }
 
-.token.deleted {
-  text-decoration: line-through;
+.token.atrule,
+.token.attr-value,
+.token.function {
+  color: #ffd700;
 }
 
-.token.inserted {
-  border-bottom: 1px dotted #656b47;
-  text-decoration: none;
+.token.keyword {
+  color: #00e0e0;
 }
 
-.token.italic {
-  font-style: italic;
+.token.regex,
+.token.important {
+  color: #ffd700;
 }
 
 .token.important,
@@ -142,36 +108,54 @@ code.language-scss,
   font-weight: bold;
 }
 
-.token.important {
-  color: #a2b34d;
+.token.italic {
+  font-style: italic;
 }
 
 .token.entity {
   cursor: help;
 }
 
-pre > code.highlight {
-  outline: 0.4em solid #a2b34d;
-  outline-offset: 0.4em;
-}
+@media screen and (-ms-high-contrast: active) {
+  code[class*='language-'],
+  pre[class*='language-'] {
+    color: windowText;
+    background: window;
+  }
 
-/* overrides color-values for the Line Numbers plugin
- * http://prismjs.com/plugins/line-numbers/
- */
-.line-numbers .line-numbers-rows {
-  border-right-color: #eaecdf;
-}
+  :not(pre) > code[class*='language-'],
+  pre[class*='language-'] {
+    background: window;
+  }
 
-.line-numbers-rows > span:before {
-  color: #d7dac8;
-}
+  .token.important {
+    background: highlight;
+    color: window;
+    font-weight: normal;
+  }
 
-/* overrides color-values for the Line Highlight plugin
- * http://prismjs.com/plugins/line-highlight/
- * alpha transparency in 8 digits hex notation coming to a browser near you soon:
- * https://drafts.csswg.org/css-color/#hex-notation
- */
-.line-highlight {
-  background: #656b4733;
-  background: linear-gradient(to right, #656b4733 70%, #656b4700);
+  .token.atrule,
+  .token.attr-value,
+  .token.function,
+  .token.keyword,
+  .token.operator,
+  .token.selector {
+    font-weight: bold;
+  }
+
+  .token.attr-value,
+  .token.comment,
+  .token.doctype,
+  .token.function,
+  .token.keyword,
+  .token.operator,
+  .token.property,
+  .token.string {
+    color: highlight;
+  }
+
+  .token.attr-value,
+  .token.url {
+    font-weight: normal;
+  }
 }
