@@ -11,8 +11,14 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <meta name="google-signin-client_id" content="955421285965-6n8qbvd5isjktm6ci0ejvia0s40sehui.apps.googleusercontent.com">
-        <meta name="google-signin-scope" content="https://www.googleapis.com/auth/analytics.readonly">
+        <meta
+          name="google-signin-client_id"
+          content="955421285965-6n8qbvd5isjktm6ci0ejvia0s40sehui.apps.googleusercontent.com"
+        />
+        <meta
+          name="google-signin-scope"
+          content="https://www.googleapis.com/auth/analytics.readonly"
+        />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>

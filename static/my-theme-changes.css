@@ -128,6 +128,10 @@ article header h1 a.editPostLink {
   margin-bottom: 0px;
 }
 
+.gatsby-resp-image-image {
+  box-shadow: none !important;
+}
+
 header h3 {
   color: #aaa;
 }
@@ -556,6 +560,10 @@ body.dark div.pageFooter svg {
 
 .conversation-outer-wrapper .gt-container .gt-comment-reply {
   display: none;
+}
+
+.conversation-outer-wrapper .gt-container .gt-comment-like {
+  right: 0px;
 }
 
 .conversation-outer-wrapper .gt-container .gt-ico.gt-ico-reply {
