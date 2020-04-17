@@ -23,7 +23,7 @@ It exports a Provider you need to wrap your app with (place it _inside_ of react
 
 <div class="sidenote">
 
-Behind the scenes, that Provider simply wraps its children (your app) with a [Context Provider](https://github.com/dutzi/react-route-transition/blob/master/src/TransitionProvider.tsx#L26). It sets up the Context Provider, passing it a push (`history.push`, or react-router's `push` method provided by their `useHistory` hook) function, location (`window.location`, or react-router's `usLocation()` return value) and an (empty) array of **listeners**.
+Behind the scenes, that Provider simply wraps its children (your app) with a [Context Provider](https://github.com/dutzi/react-route-transition/blob/master/src/TransitionProvider.tsx#L26). It sets up the Context Provider, passing it a push (`history.push`, or react-router's `push` method provided by their `useHistory()` hook) function, location (`window.location`, or react-router's `usLocation()` return value) and an (empty) array of **listeners**.
 
 The two hooks provided by react-route-transition (`useTransition()` and `useTransitionHistory()`) will later read from and write to that context.
 
@@ -78,11 +78,11 @@ useTransition({
 
 When _entering_ `/` start **onEnter** animation, when _leaving_, start **onLeave**.
 
-When the component that called `useTransition()` unmounts, the handlers it registered are also removed, so pages no longer in view will not start animations in the background.
+When the component that called `useTransition()` unmounts, the handlers it registered are also removed, so pages no longer in view will not start animating in the background.
 
-Now, if you're unfamiliar with [gsap](https://github.com/greensock/GSAP), it's an old school animation library from the 00's which is still really nice. A great, light-weight alternative is [anime.js](https://github.com/juliangarnier/anime/). They both expose simple APIs that make animating the DOM a breeze and (IMO) a lot more readable than declarative ones (see my disclaimer below).
+Now, if you're unfamiliar with [gsap](https://github.com/greensock/GSAP), it's an old school animation library from the 00's which is still really nice. A great, light-weight alternative is [anime.js](https://github.com/juliangarnier/anime/). They both expose simple APIs that make animating the DOM a breeze and (IMO) produce code that is more readable than one written when using declarative animation libraries (see my disclaimer below).
 
-What the first animation block (the highlighted lines) does is dim out (transition opacity to 0) all the children of the element that has a data attribute named `home-main` _and_ the element that has a data attribute named `home-footer`. Each of the animated element will animate within 600ms and a staggering effect of 125ms will be applied.
+The first animation block (the highlighted lines) dims out (transitions opacity to 0) all the children of the element that has a data attribute named `home-main` _and_ the element that has a data attribute named `home-footer`. Each of the animated element will animate within 600ms and a stagger effect of 125ms will be applied.
 
 The rendered element for such an animation might look something like:
 
@@ -103,11 +103,11 @@ We are now ready to see the animation play.
 
 react-route-transition will start an animation when the user navigates to (or from) a page for which an animation was required (in the example above, when the user animates to and from `/`).
 
-The way you navigate pages with react-route-transition is same as with react-router, by calling `history.push("/some-path")`, except the `history` object here is the what's returned by `useTransitionHistory()`, a hook provided by react-route-transition.
+The way you navigate pages with react-route-transition is similar to react-router, by calling `history.push('/some-path')`, except the `history` object here is what is returned by `useTransitionHistory()`, a hook provided by react-route-transition.
 
 <div class="sidenote">
 
-react-route-transition handles navigating for you. It exports a hook named `useTransitionHistory()` that accepts the path you want to navigate to. That hook [orchestrates the animations](https://github.com/dutzi/react-route-transition/blob/master/src/use-transition-history.ts#L20-L56). It goes over the list of registered handlers, finds which ones describe an `onLeave` animation for the current location, fires up all these animations simultaneously, waits for them to complete and then **calls history.push** (react-router's), this causes new components to mount and register their handlers (that may or may not describe `onEnter` animations for this new view). Finally, it fires up all the `onEnter` animations for the new location.
+react-route-transition handles navigating for you. It exports a hook named `useTransitionHistory()` that returns an object with a single method named `push`, which accepts the path you want to navigate to. That hook [orchestrates the animations](https://github.com/dutzi/react-route-transition/blob/master/src/use-transition-history.ts#L20-L56). When calling push, it goes over the list of registered handlers, finds which ones describe an `onLeave` animation for the current location, fires up all these animations simultaneously, waits for them to complete and then **calls history.push** (react-router's), this causes new components to mount and register their handlers (that may or may not describe `onEnter` animations for this new view). Finally, it fires up all the `onEnter` animations for the new location.
 
 </div>
 
