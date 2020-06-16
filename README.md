@@ -2,6 +2,8 @@
 
 ## deploy
 
+First install now CLI (`yarn global add now`), then:
+
 ```
 yarn deploy
 ```

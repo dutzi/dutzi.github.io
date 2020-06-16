@@ -80,7 +80,7 @@ Leaving us with the last and final step of modifying the `config-overrides.js` f
 const { override } = require('customize-cra')
 const { addReactRefresh } = require('customize-cra-react-refresh')
 
-module.exports = override(addReactRefresh({ disableRefreshCheck: true }))
+module.exports = override(addReactRefresh())
 ```
 
 And we're done! We can now restart our development server and enjoy a greatly improved feedback loop and overall developer experience within our Create React App.
