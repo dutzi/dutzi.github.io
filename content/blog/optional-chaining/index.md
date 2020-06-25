@@ -1,5 +1,5 @@
 ---
-title: Optional Chaining Tips
+title: <em>Optional Chaining</em> Tips
 date: '2020-01-05T00:27:09.819Z'
 description: 'A quick reference guide for Optional Chaining.'
 tags: ['🐥 beginner', 'esnext', 'optional-chaining']

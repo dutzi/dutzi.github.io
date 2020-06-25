@@ -9,6 +9,7 @@ import GithubConversation from '../components/github-conversation'
 import Conversation from '../components/conversation'
 import GithubLink from '../components/github-link'
 import Devider from '../components/devider'
+import PartyBox from '../components/party-box'
 
 function BlogPostTemplate({ data, pageContext, location, uri }) {
   const post = data.markdownRemark
@@ -23,20 +24,21 @@ function BlogPostTemplate({ data, pageContext, location, uri }) {
       />
       <article>
         <header>
+          <PartyBox />
           <h1
             style={{
               marginTop: rhythm(1),
               marginBottom: 0,
             }}
           >
-            <a
+            {/* <a
               className="editPostLink"
               href={`https://github.com/dutzi/dutzi.github.io/edit/site/content/blog/${uri.substr(
                 1
               )}/index.md`}
             >
               ✎
-            </a>
+            </a> */}
             <script
               dangerouslySetInnerHTML={{
                 __html: `
@@ -44,7 +46,9 @@ function BlogPostTemplate({ data, pageContext, location, uri }) {
             `,
               }}
             ></script>
-            {post.frontmatter.title}
+            <span
+              dangerouslySetInnerHTML={{ __html: post.frontmatter.title }}
+            />
           </h1>
           <p
             style={{
@@ -69,14 +73,24 @@ function BlogPostTemplate({ data, pageContext, location, uri }) {
               <li>
                 {previous && (
                   <Link to={previous.fields.slug} rel="prev">
-                    ← {previous.frontmatter.title}
+                    ←{' '}
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: previous.frontmatter.title,
+                      }}
+                    />
                   </Link>
                 )}
               </li>
               <li>
                 {next && (
                   <Link to={next.fields.slug} rel="next">
-                    {next.frontmatter.title} →
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: next.frontmatter.title,
+                      }}
+                    />{' '}
+                    →
                   </Link>
                 )}
               </li>

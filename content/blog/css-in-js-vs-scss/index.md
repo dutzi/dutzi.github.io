@@ -1,5 +1,5 @@
 ---
-title: Thoughts On CSS-in-JS
+title: Thoughts On <em>CSS-in-JS</em>
 date: '2020-01-06T00:50:03.214Z'
 description: 'Sharing my experience working both with SCSS and Styled Components.'
 tags: ['css', 'scss', 'css-in-js']

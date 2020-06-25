@@ -1,5 +1,5 @@
 ---
-title: Magical Properties Of min-width 0px
+title: Magical Properties Of <em>min-width 0px</em>
 date: '2020-01-10T15:22:18.603Z'
 description: 'Setting min-width to 0px can help with a couple of things. I will go over them in this post.'
 tags: ['css', 'ellipsis', 'overflow']

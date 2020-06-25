@@ -1,5 +1,5 @@
 ---
-title: Things I've Learnt Optimizing Our Build Time
+title: Things I've Learnt <em>Optimizing Our Build Time</em>
 date: '2020-01-05T18:24:12.637Z'
 description: "I'll walk through some of build time optimization techniques we used for our products here at the company I work at."
 tags: ['webpack', 'optimization', 'build']

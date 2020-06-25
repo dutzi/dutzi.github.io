@@ -1,5 +1,5 @@
 ---
-title: Userscripts Are Fun And Are Still Very Much Relevant
+title: <em>Userscripts</em> Are Fun And Are Still Very Much Relevant
 date: '2020-04-17T02:43:15.851Z'
 description: 'Sharing my thoughts on userscripts, a phenomenon the swept the internet back in the 00s.'
 tags: ['userscripts']

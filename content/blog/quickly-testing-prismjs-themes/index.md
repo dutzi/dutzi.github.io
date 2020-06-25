@@ -1,5 +1,5 @@
 ---
-title: Test PrismJS Themes Directly On Your Blog
+title: <em>Test PrismJS Themes</em> Directly On Your Blog
 date: '2020-01-13T21:31:47.125Z'
 description: "A simple snippet I made that helps testing PrismJS themes without leaving your app's page."
 tags: ['prismjs', 'blog']

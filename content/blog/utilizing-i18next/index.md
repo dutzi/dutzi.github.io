@@ -1,5 +1,5 @@
 ---
-title: Things I've Learnt Utilizing I18next
+title: Things I've Learnt Utilizing <em>I18next</em>
 date: '2020-01-06T02:55:36.245Z'
 description: 'I18n can be a pain. This quick tutorial should give you enough to alleviate some of it.'
 tags: ['i18n', 'i18next', 'locize']

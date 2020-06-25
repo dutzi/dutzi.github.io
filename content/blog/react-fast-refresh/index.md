@@ -1,5 +1,5 @@
 ---
-title: Adding React Fast Refresh to Your Create React App Project
+title: Adding <em>React Fast Refresh</em> to Your Create React App Project
 date: '2020-01-12T19:56:29.881Z'
 description: 'While it is still in development you can finally try React Fast Refresh in your Create React App project, without even ejecting.'
 tags: ['react', 'react-hot-loader', 'fast-refresh']
@@ -86,5 +86,7 @@ module.exports = override(addReactRefresh())
 And we're done! We can now restart our development server and enjoy a greatly improved feedback loop and overall developer experience within our Create React App.
 
 **Disclaimer:** I haven't thoroughly tested React Fast Refresh yet, I was very excited to find that it's ready to test out and wanted to share it. I will probably update this post in the coming days, adding the caveats I'll find along the way.
+
+**Update:** I have tested it and it's awesome.
 
 <sup>1</sup> If you don't mind a few hiccups here and there...

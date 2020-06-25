@@ -1,5 +1,5 @@
 ---
-title: Things You Should Know About Array.findIndex
+title: Things You Should Know About <em>Array.findIndex</em>
 date: '2020-01-04T08:51:12.960Z'
 description: 'A short and simple overview of Array.findIndex.'
 tags: ['🐥 beginner', 'array', 'findIndex']

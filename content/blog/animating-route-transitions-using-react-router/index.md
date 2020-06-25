@@ -1,5 +1,5 @@
 ---
-title: Animating Route Transitions Using React Router
+title: <em>Animating Route Transitions</em> Using React Router
 date: '2020-04-04T21:38:51.098Z'
 description: 'A tiny library I made that makes animating between routes much easier.'
 tags: ['react', 'router', 'animation', 'transition', 'routes']

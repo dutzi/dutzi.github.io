@@ -1,5 +1,5 @@
 ---
-title: Hooks!
+title: <em>Hooks!</em>
 date: '2020-01-06T03:48:48.556Z'
 description: 'Some pretty useful, pretty generic, typed hooks I made for a recent project.'
 tags: ['react', 'hooks']

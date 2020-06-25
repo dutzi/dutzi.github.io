@@ -1,5 +1,5 @@
 ---
-title: I Built a Simple Serverless Storage Solution
+title: I Built a Simple <em>Serverless Storage Solution</em>
 date: '2020-05-24T08:01:18.334Z'
 description: 'I needed a quick storage solution for a simple project so I ended up creating a generic one.'
 tags: ['serverless', 'jamstack', 'database', 'localStorage']

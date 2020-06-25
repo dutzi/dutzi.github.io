@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import { rhythm, scale } from '../utils/typography'
 import DarkMode from './dark-mode'
 import GithubLink from './github-link'
+import PartyBox from './party-box'
 
 class Layout extends React.Component {
   render() {
@@ -13,30 +14,33 @@ class Layout extends React.Component {
 
     if (location.pathname === rootPath) {
       header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
+        <>
+          <h1
             style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
+              ...scale(1),
+              marginBottom: rhythm(1.5),
+              marginTop: 0,
             }}
-            to={`/`}
           >
-            {title}
-          </Link>
-        </h1>
+            <Link
+              style={{
+                boxShadow: `none`,
+                textDecoration: `none`,
+                color: `inherit`,
+              }}
+              to={`/`}
+            >
+              dutzi.party
+            </Link>
+          </h1>
+
+          <PartyBox />
+        </>
       )
     } else {
       header = (
         <h3
           style={{
-            fontFamily: `Montserrat, sans-serif`,
             marginTop: 0,
           }}
         >
@@ -48,7 +52,7 @@ class Layout extends React.Component {
             }}
             to={`/`}
           >
-            {title}
+            {'dutzi.party'}
           </Link>
         </h3>
       )

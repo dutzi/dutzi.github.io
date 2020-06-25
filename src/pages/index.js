@@ -17,7 +17,7 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <Bio greeting />
+        {/* <Bio greeting /> */}
         {posts
           .filter(({ node }) => !node.frontmatter.unlisted)
           .map(({ node }) => {
@@ -31,9 +31,11 @@ class BlogIndex extends React.Component {
                       marginBottom: rhythm(1 / 4),
                     }}
                   >
-                    <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                      {title}
-                    </Link>
+                    <Link
+                      style={{ boxShadow: `none` }}
+                      to={node.fields.slug}
+                      dangerouslySetInnerHTML={{ __html: title }}
+                    ></Link>
                   </h3>
                   <small>{node.frontmatter.date}</small>
                 </header>
@@ -44,14 +46,14 @@ class BlogIndex extends React.Component {
                     }}
                   />
                 </section>
-                <div className="tags">
+                {/* <div className="tags">
                   {tags &&
                     tags.map(tag => (
                       <span key={tag} className="tag">
                         {tag}
                       </span>
                     ))}
-                </div>
+                </div> */}
               </article>
             )
           })}

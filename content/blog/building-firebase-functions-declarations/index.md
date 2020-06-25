@@ -1,5 +1,5 @@
 ---
-title: Things I've Learnt Building Firebase Functions Declarations
+title: Things I've Learnt Building <em>Firebase Functions Declarations</em>
 date: '2020-01-04T22:48:39.706Z'
 description: 'Making a simple tool that creates declaration files for your Firebase Functions taught me a few things. Here they are.'
 tags: ['firebase', 'functions', 'typescript', 'experimental']

@@ -1,5 +1,5 @@
 ---
-title: Things I've Learnt Using VSCode
+title: Things I've Learnt Using <em>VSCode</em>
 date: '2020-01-04T06:26:28.307Z'
 description: 'Listing some extensions I found useful and some of my keyboard shortcuts.'
 tags: ['vscode', 'extensions', 'keybindings']
