@@ -150,18 +150,17 @@
       }
     </script>
 
-    <div class="darkModeButtonWrapper">
-      <button
-        onclick="toggleDarkMode()"
-        class="darkModeButton"
-        aria-label="Toggle dark mode"
-      >
-        <div class="moon1"></div>
-        <div class="moon2"></div>
-      </button>
-    </div>
-
     <div class="site-wrapper">
+      <div class="darkModeButtonWrapper">
+        <button
+          onclick="toggleDarkMode()"
+          class="darkModeButton"
+          aria-label="Toggle dark mode"
+        >
+          <div class="moon1"></div>
+          <div class="moon2"></div>
+        </button>
+      </div>
       <header class="site-header">{{ headerContent }}</header>
 
       <main>{{ content }}</main>
