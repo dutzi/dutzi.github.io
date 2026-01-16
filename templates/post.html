@@ -1,0 +1,71 @@
+<article>
+  <header>
+    <div class="party-box-wrapper" tabindex="0" onmousedown="playPartySound()">
+      <div class="party-box">
+        🎉
+        <div class="inset-box"></div>
+      </div>
+    </div>
+    <h1 style="margin-top: 1.75rem; margin-bottom: 0;">
+      {{ title }}
+    </h1>
+    <p style="font-size: 0.85rem; display: block; margin-bottom: 1.75rem; color: #888;">
+      {{ date }}
+    </p>
+  </header>
+
+  <section class="post-content">
+    {{ content }}
+  </section>
+
+  <footer>
+    <!-- Bio -->
+    <div class="bio" style="display: flex; margin-bottom: 2.625rem; align-items: center;">
+      <img
+        src="/assets/profile-pic.png"
+        alt="dutzi"
+        style="margin-right: 0.875rem; margin-bottom: 0; min-width: 50px; width: 50px; height: 50px; border-radius: 100%;"
+      >
+      <p style="margin: 0;">
+        Thanks for reading!
+        <span class="signature">
+          — <a href="https://github.com/dutzi">dutzi</a>
+        </span>
+      </p>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+      <ul style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: space-between;">
+        <li style="margin-bottom: 0.5rem;">{{ prevLink }}</li>
+        <li style="margin-bottom: 0.5rem;">{{ nextLink }}</li>
+      </ul>
+    </nav>
+
+    <!-- Divider -->
+    <hr class="devider" style="width: 300px; margin: 2rem auto;">
+
+    <!-- Comments -->
+    <div id="gitalk-container" class="conversation-outer-wrapper"></div>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+      const gitalk = new Gitalk({
+        clientID: 'Iv1.b081efd1a044309f',
+        clientSecret: 'edb326c0324dade12d63e4e5dbad487757056682',
+        repo: 'dutzi.github.io',
+        owner: 'dutzi',
+        admin: ['dutzi'],
+        id: '{{ slug }}',
+        distractionFreeMode: false,
+        title: '{{ title }}',
+        labels: ['Post Discussion'],
+        body: `Dear reader,
+
+I'm using Github Issues as a **platform for discussion** (using [Gitalk](https://github.com/gitalk/gitalk)).
+
+You can join the conversation either by commenting here, or in [my blog](https://dutzi.party/) 🌈`
+      });
+      gitalk.render('gitalk-container');
+    </script>
+  </footer>
+</article>

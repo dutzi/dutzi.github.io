@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{ description }}" />
+    <title>{{ title }}</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/prism-theme.css" />
+    <link rel="stylesheet" href="/my-theme-changes.css" />
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <style>
+      /* Base typography from typography-theme-wordpress-2016 */
+      html {
+        font-size: 100%;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        font-family: 'Fira Mono', monospace;
+        font-weight: 400;
+        line-height: 1.75;
+        color: hsla(0, 0%, 0%, 0.9);
+        background: #ffffff;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: 'Fira Mono', monospace;
+        margin-top: 0;
+        font-weight: 700;
+        text-rendering: optimizeLegibility;
+        line-height: 1.1;
+      }
+
+      h1 {
+        font-size: 2em;
+        line-height: 1.4;
+      }
+      h2 {
+        font-size: 1.5em;
+      }
+      h3 {
+        font-size: 1.22222em;
+        line-height: 1.4em;
+      }
+
+      p {
+        margin-bottom: 1.75rem;
+      }
+
+      a {
+        color: #1f1f1f;
+        text-decoration: none;
+        box-shadow: 0 1px 0 0 currentColor;
+      }
+
+      a:hover,
+      a:active {
+        box-shadow: none;
+      }
+
+      blockquote {
+        margin-left: -1.75rem;
+        margin-right: 1.75rem;
+        padding-left: 1.42188rem;
+        border-left: 0.32813rem solid hsla(0, 0%, 0%, 0.9);
+        color: hsla(0, 0%, 0%, 0.59);
+        font-style: italic;
+      }
+
+      hr {
+        background: #221b2e;
+        height: 4px;
+        border: 0;
+        margin: 1.75rem 0;
+      }
+
+      /* Layout */
+      .site-wrapper {
+        margin: 0 auto;
+        max-width: 42rem;
+        padding: 2.625rem 1.3125rem;
+      }
+
+      .site-header {
+        margin-bottom: 2.625rem;
+      }
+
+      .site-title {
+        font-size: 2.1rem;
+        margin-bottom: 2.625rem;
+        margin-top: 0;
+      }
+
+      .site-title a {
+        box-shadow: none;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .site-title-small {
+        font-size: 1.22222rem;
+        margin-top: 0;
+      }
+
+      .site-title-small a {
+        box-shadow: none;
+        text-decoration: none;
+        color: #aaa;
+      }
+
+      /* Dark mode initialization */
+      html.dark {
+        background: #1f1f1f;
+      }
+    </style>
+
+    <!-- Dark mode init (prevent flash) -->
+    <script>
+      ;(function () {
+        if (!window.localStorage.getItem('light')) {
+          document.documentElement.classList.add('dark')
+          document.body && document.body.classList.add('dark')
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <script>
+      if (!window.localStorage.getItem('light')) {
+        document.body.classList.add('dark')
+      }
+    </script>
+
+    <div class="darkModeButtonWrapper">
+      <button
+        onclick="toggleDarkMode()"
+        class="darkModeButton"
+        aria-label="Toggle dark mode"
+      >
+        <div class="moon1"></div>
+        <div class="moon2"></div>
+      </button>
+    </div>
+
+    <div class="site-wrapper">
+      <header class="site-header">{{ headerContent }}</header>
+
+      <main>{{ content }}</main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
+    <script src="/js/dark-mode.js"></script>
+    <script src="/js/party-box.js"></script>
+
+    <script>
+      // Initialize header based on page type
+      (function() {
+        const isHome = {{ isHome }};
+        const header = document.querySelector('.site-header');
+
+        if (isHome) {
+          header.innerHTML = `
+            <h1 class="site-title">
+              <a href="/">dutzi.party</a>
+            </h1>
+            <div class="party-box-wrapper" tabindex="0" onmousedown="playPartySound()">
+              <div class="party-box">
+                🎉
+                <div class="inset-box"></div>
+              </div>
+            </div>
+          `;
+        } else {
+          header.innerHTML = `
+            <h3 class="site-title-small">
+              <a href="/">dutzi.party</a>
+            </h3>
+          `;
+        }
+      })();
+    </script>
+  </body>
+</html>
