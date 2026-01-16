@@ -9,10 +9,12 @@
     "build": "node scripts/build.js",
     "dev": "node scripts/dev.js",
     "deploy": "node scripts/build.js && node scripts/deploy.js",
+    "configure-bucket": "node scripts/configure-bucket.js",
     "format": "prettier --write \"**/*.{js,jsx,json,md,html,css}\""
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.490.0",
+    "@aws-sdk/credential-providers": "^3.490.0",
     "dotenv": "^16.3.1",
     "fs-extra": "^11.2.0",
     "gitalk": "^1.8.0",
